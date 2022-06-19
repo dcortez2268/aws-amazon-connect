@@ -1,4 +1,6 @@
 # aws-amazon-connect
+This training cohort is to learn the essentials of AWS and the Amazon Connect Service.  It is a ten week course and consists of the following:
 
-
-hello, testing changes.
+wk1:
+wk2:
+wk3: 
