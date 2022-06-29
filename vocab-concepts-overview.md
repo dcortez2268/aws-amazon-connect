@@ -110,6 +110,53 @@ CX, customer experience: the process design teams follow to optimize customer ex
                                         but approach
 
 
+WEEK 3:
+effective rate for employees: focusing on increasing productivity rather than quantity of employees to negate 
+                        need for more workers and also to increase wages to increase employee retainment rate
+how to improve:
+    geo strategy: optimize geographic footprint by placing work in most cost efficient locations,
+    optimize cx delivery: make employees feel valued by enabling hybrid workplaces to meet employee needs, 
+                        implement efficient software and processes to help emloyees tasks become easier,
+    leverage technology: automation reduces cost and employee effort, improves productivity while providing 
+                        superior service
+
+omni channel contact centers: various channels within single stream provide access to consolidated data, agent 
+                            can easily switch between channels, and allows customers to switch from one channel to another
+voice channel: traditional inbound or outbound voice communications
+chat: proactive or reactive chat sessions through a web site or mobile app
+tasks: allow agents to create and complete tasks in an automated process
+
+CCP, contact control panel: customizable interface that agents use to engage with contacts across multiple 
+                        channels
+contact flows: features that let you define the customer experience within the contact center from start to 
+            finish, you can play prompts, get input data, invoke lambda functions, and integrate lex bot, and so much more because they can integrate with CRMs and databases to dynamically adapt the experience based on customer or history 
+routing profile: links a collection of queues to agents and determines the contacts that an agent receives and routing priority
+
+Amazon Connect features a native integration with amazon Lex for NLP over text and voice
+consider when creating connect instance: customers' location, agents' location, regulatory or compliance data 
+                            requirements, on premise, cloud, or saas workloads that integrate to contact center
+
+routing consists of: queues, routing profiles, contact flows
+
+queue: waiting area that holds contacts to be answered by agents
+prompts: audio files played in call flows
+contact: interaction with a customer in your contact center
+contact attributes: refer to key value pairs that contain data about a contact, they allow you to pass data 
+                    between amazon connect and other services
+quick connects: are a way for you to create a list of destinations for common transfers, can be external 
+                number, agent, or queue
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 WEEK5:
