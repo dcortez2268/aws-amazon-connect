@@ -1,3 +1,4 @@
+WEEK 1:
 contact centers: call centers,
 amazon connect: omni channel cloud contact center that helps companies provide superior customer service at lower cost,
 three deployment models for cloud computing: public cloud, private cloud, and hybrid cloud.
@@ -18,7 +19,7 @@ Serverless computing: means that your code runs on servers without needing to pr
                     servers.the cloud service provider automatically provisions, scales, and manages the 
                     infrastructure required to run code.  These architectures are highly scalable and event driven.  They use resources only when a specific function or trigger occurs.  
 AWS LAMBDA: service for serverless computing, (allows you to run code without needing to provision or manage 
-            servers )
+            servers ), triggers in response to events, and scales automatically,
 Amazon SQS, Simple Queue Service: service that allows you to send, store, and receive messages between software 
                                 components, other services, or users, without losing messages or requiring other services to be available.
 Amazon Simple Notification Service, (SNS): publish/subscribe service where subscribers can be web servers, 
@@ -43,8 +44,78 @@ Amazon VPC, virtual private cloud: a networking service that allows you to estab
     Network Access control list, ACL: virtual firewall that checks packet permissions for subnets
 
 Amazon Route 53: DNS web service
-
 latency: the time between when content requested and received
+
+
+WEEK 2:
+block level storage volumes: behave like physical hard drives
+Amazon EBS, elastic block store: service that provides block level storage volumes that you can use with EC2 
+                                instances, data persists if you stop or terminate EC2 instance
+
+object storage: each object consists of data, metadata, and key,
+Amazon S3, simple storage service: service that provides object level storage.  Amazon S2 stores data as 
+                                    objects in buckets, offers unlimited storage space, versioning and permission controls, you pay for what you use
+
+How is EBS different from S3? : S3 is accessbile via the internet from API where EBS is accessed by the single 
+                                instance attached to EBS and can only be used by one instance at a time 
+
+file storage: multiple clients can access data that is stored in shared file folders, ideal for use cases in 
+            which a large number of serrvices and resources need to access the same data at the same time
+Amazon EFS, Elastic File System: scalable file system used with AWS Cloud services and on premise resources
+
+Amazon RDS, Relational Database Service: services that enables you to run relational databases in the AWS cloud
+Amazon DynamoDB: key value database service 
+Amazon Redshift: data warehousing service that you can use for big data analytics
+AWS DMS, database migration service: enables you to migrate relational databases, nonrelational, and other 
+                                    types of data stores.  The source and target databases can be of the same type or different types,
+
+shared responsibility model: customers are responsible for security in the cloud and AWS is responsible for 
+                            security of the cloud
+
+AWS IAM, Identity and Access Management: enables you to manage access to AWS services and resources securely
+IAM identity: provides access to an AWS account,
+IAM user: identity that you create in AWS with permission policies
+IAM role: identity that you create in AWS with permission policies, however a role does not have to be uniquely 
+        associated with one person, a role is inteded to be assumable by anyone who needs it
+IAM policy: document that allows or denies permissions to AWS services and resources, enable you to customize 
+            users' levels of access to resources
+AWS Shield: service that protects applications against DDos attacks,
+AWS KMS, key management service: enables you to perform encryption operations through the use of cryptographic 
+                                keys
+AWS WAF: web application firewall that lets you monitor network requests that come into your web apps
+AWS Cloudwatch: basically a metrics repository for other aws services and resources, provides built in code 
+                monitoring and logging for lambda functions
+
+resource policy: used to tell the lambda service which events have permission to invoke the lambda function,
+event source: triggers your lambda function, lots of services can be event sources,
+different execution models for lambda functions: push events (synchronous and asynchronous), and polling events 
+                                                (stream based and non stream based)
+    push events: services delivers events directly to function,
+    polling events: lambda polls for events and delivers to function,
+cold start: environment is bootstrapped, then function code executes
+warm start: code executes without going through bootstrap process
+three core components to configuring lambda: memory, timeout, and concurrency
+
+serverless deployment: you are designing the entire structure to very detailed specifications to deploy function: the code, dependencies, and you model your infrastrucutre in a cloudformation template and use that to deploy your desired stack without writing custom scripts, 
+
+SAM, serverless application model: application framework that allows you to deploy your serverless stack to 
+                                each AWS account, you can incorporate additional tools to create an automated CI/CD pipeline for your serverless applications that is integrated with SAM
+
+AWS xray: traces path and timing of an invocation of lambda function to locate bottlenecks and failures
+AWS cloudtrail: logs api calls made by or on behalf of a function
+DLQs, dead letter queues: help you capture application errors that you cannot just discard but must respond to
+
+CX, customer experience: the process design teams follow to optimize customer experience at all touchpoints before, during, and after conversion.  CX encompasses every single interaction a user has with a particular brand.
+3 keys for exceptional customer service: embrace the new, own the relationship and build trust, and use the no 
+                                        but approach
+
+
+
+
+WEEK5:
+JSON:
+
+
 
 
 
