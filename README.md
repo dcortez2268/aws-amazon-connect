@@ -4,3 +4,5 @@
 * wk1: high level overview of cloud principles and common AWS services
 * wk2: storage, databases, aws iam, security, aws lambda, cx
 * wk3: costs in contact center, intro amazon connect, agents, network config
+* wk4: batch processing solution, building ivr feedback system
+* wk5: JSON, 
