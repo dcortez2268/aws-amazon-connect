@@ -146,6 +146,13 @@ contact attributes: refer to key value pairs that contain data about a contact, 
 quick connects: are a way for you to create a list of destinations for common transfers, can be external 
                 number, agent, or queue
 
+WK4:
+WEEK 5:
+
+Okta: identity and access management service that provides single sign on for many different applications, can 
+    be integrated with Amazon Connect
+
+
 
 
 
