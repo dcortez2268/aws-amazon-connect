@@ -143,43 +143,59 @@ prompts: audio files played in call flows
 contact: interaction with a customer in your contact center
 contact attributes: refer to key value pairs that contain data about a contact, they allow you to pass data 
                     between amazon connect and other services
-quick connects: are a way for you to create a list of destinations for common transfers, can be external 
+quick connects: a list of destinations for common transfers, can be external 
                 number, agent, or queue
 
 WK4:
+reference powerpoints
 WEEK 5:
+reference powerpoints
 
 Okta: identity and access management service that provides single sign on for many different applications, can 
     be integrated with Amazon Connect
 
 
+AMAZON CONNECT ESSENTIALS COURSE:
 
+IVR, interactive voice responses: used to assist contacts navigating through the existing queues to reach an agent that is able to assist them
+agent: employees or customer service representative taking calls
 
+ease of customization is a huge benefit for amazon connect, allows for incredible customer experiences because we can customize them to fit business needs,
+power derives from lambda, also other crm integrations, 
 
+did numbers, direct dial in: generic local numbers
+toll free numbers: used to ensure that there is no charge to someone placing a call
 
+contact flows:
+    you have to set the active queue before transfer to queue block,
+    only certain blocks will be available to certain type of contact flow,
 
+lex: 
+    provides an incredible amount of customization through the use of attributes in lambda
+    uses speech recognition and nlp to build an intricate chat bot
+utterances: configured phrases that can be typed or spoken to invoke a given intent
+intents: result in an action based on our user input, input can be received through text or natural language understanding
+    can have several slots and each slot has a type
+slots: are the actual input data from a customer required to fulfill an intent, basically like a variable
+fullfillment: how the request is ocmpleted after the customer contact has provided all information required to 
+            fullfill intent.  could be passed to lambda or return the information back to the client via response
 
+CHAT:
+    you can wait an extended period of time with wait block
+    you cannot initiate chat conversations from the CCP
+    you cannot receive calls while on chat-including from other agents
+    customers and agents cannot send attachments through chat interface
+    only one channel is routed at a time
+    total duration of contact flow cannot exceed 25 hours
+    lex has a default session timeout duration of five minutes, this timeout can be increased up to 24 hrs
+    test environment used to test chat uses the basic queue and basic routing profile.  By default, routing profile allows up to 2 chats, but this can be increased
 
+    BEFORE WE TEST CHAT WE NEED TO PRECONFIG:
+    update security profiles to allow the chat test mode,
+    update routing profile to permit chat channel,
+    configure a disconnect flow where we can add wait action blocks if we'd like
 
-
-
-
-
-
-WEEK5:
-JSON:
-
-
-
-
-
-
-
-
-
-
-
-
+reaching more customers with web and mobile chat on amazon connect post has a lot of useful information
 
 
 

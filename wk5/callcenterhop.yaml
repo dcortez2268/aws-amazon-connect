@@ -1,0 +1,367 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: >
+    " 
+    - Create the basic foundation for streaming customer audio from Amazon Connect by deploying:
+    - S3 Bucket for creating website to manage the agents associated with extension
+    - Dynamo DB tables stores the agents associated with extension
+    - Lambda function copies all the files and creates the default user sjobs
+
+Mappings: 
+    FunctionMap:
+        Configuration:
+            S3Bucket: "accp-2019"
+            S3Key: "callcenterhop/latest/"
+
+Parameters:
+    S3BucketNameForWebSite:
+        Type: String
+        Default: "website-enter-bucket-name"
+        Description: > 
+            Enter the (globally unique) name you would like to use for the Amazon S3 bucket where we will store the website assets. 
+            This template will fail to deploy if the bucket name exist.
+        AllowedPattern: '(?=^.{3,63}$)(?!^(\d+\.)+\d+$)(^(([a-z0-9]|[a-z0-9][a-z0-9\-]*[a-z0-9])\.)*([a-z0-9]|[a-z0-9][a-z0-9\-]*[a-z0-9])$)'
+            
+    callcenterhopTable:
+        Type: String
+        Default:  "callcenterhop-table"
+        Description: >
+            The name of the DynamoDB Table where call center hours of operation and reason will be stored (Ensure you do not have a table with this name already).
+        
+Outputs:
+    callcenterhopTable:
+        Description: >
+            The ARN of the DynamoDB table created to store agent info
+        Value: !GetAtt callcenterhopDDBTable.Arn
+    IAMRole:
+        Description: >
+            The IAM Role created for the Lambda Functions in this template
+        Value: !Ref lambdaIAMRole
+    webSiteLocation:
+        Description:  >
+            Site can be access with this link.
+        Value: !Join
+          - ''
+          - - 'https://'
+            - 's3.amazonaws.com/'
+            - !Ref S3BucketNameForWebSite
+            - '/callcenterhop/callcenterhop.html'
+
+
+Metadata:
+  'AWS::CloudFormation::Interface':
+    ParameterGroups:
+      - Label:
+          default: Agent Extensions Website Configuration
+        Parameters:
+          - S3BucketNameForWebSite
+      - Label:
+          default: Amazon DynamoDB Configuration
+        Parameters:
+          - callcenterhopTable
+    ParameterLabels:
+      S3BucketNameForWebSite:
+        default: S3 BucketName
+      callcenterhopTable:
+        default: DynamoDB Table Name
+        
+Resources:
+    allowConnectToLambda1:
+        Type: 'AWS::Lambda::Permission'
+        Properties:
+            FunctionName: !Ref checkHoursOfOperation
+            Action: 'lambda:InvokeFunction'
+            Principal: connect.amazonaws.com
+            SourceAccount: !Ref 'AWS::AccountId'
+
+    createWebSiteS3Bucket:
+        Type: 'AWS::S3::Bucket'
+        Properties:
+            BucketName: !Ref S3BucketNameForWebSite
+            WebsiteConfiguration:
+                IndexDocument: callcenterhop.html
+                ErrorDocument: error.html
+                
+    callcenterhopDDBTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName:  !Ref callcenterhopTable
+        AttributeDefinitions:
+          -
+            AttributeName: "StartDateTime"
+            AttributeType: "N"
+        KeySchema:
+          -
+            AttributeName: "StartDateTime"
+            KeyType: "HASH"
+        # assuming 5 concurrent calls
+        ProvisionedThroughput:
+          ReadCapacityUnits:
+              1
+          WriteCapacityUnits:
+              1
+        PointInTimeRecoverySpecification:
+            PointInTimeRecoveryEnabled: True
+        SSESpecification:
+            SSEEnabled: True
+
+            
+    lambdaIAMRole:
+        Type: "AWS::IAM::Role"
+        Properties:
+          AssumeRolePolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              -
+                Effect: "Allow"
+                Principal:
+                  Service:
+                    - "lambda.amazonaws.com"
+                Action:
+                  - "sts:AssumeRole"
+          ManagedPolicyArns:
+            - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+            - arn:aws:iam::aws:policy/CloudWatchFullAccess
+            
+          Path: "/"
+          Policies:
+            -
+              PolicyName: amz-bootcamp-cchop-policy-ddb-s3-cognito
+              PolicyDocument:
+                Version: "2012-10-17"
+                Statement:
+                  -
+                    Effect: "Allow"
+                    Action:
+                      - "s3:PutObject"
+                      - "s3:GetObject"
+                      - "s3:PutObjectAcl"
+                    Resource: "*"
+                  -
+                    Effect: "Allow"
+                    Action:
+                      - "cognito-idp:AdminUpdateUserAttributes"
+                      - "cognito-idp:AdminConfirmSignUp"
+                    Resource: "*"
+                  -
+                    Effect: "Allow"
+                    Action:
+                      - "dynamodb:Query"
+                      - "dynamodb:Scan"
+                      - "dynamodb:PutItem"
+                      - "dynamodb:UpdateItem"
+                      - "dynamodb:GetRecords"
+                      - "dynamodb:GetShardIterator"
+                      - "dynamodb:DescribeStream"
+                      - "dynamodb:ListStreams"                      
+                    Resource: 
+                        !Join 
+                            - ''
+                            - - 'arn:aws:dynamodb:'
+                              - !Ref 'AWS::Region'
+                              - ':'
+                              - !Ref 'AWS::AccountId'
+                              - ':'
+                              - 'table/'
+                              - !Ref callcenterhopTable
+                    
+                    
+    webSiteCreator:
+      Type: "AWS::Lambda::Function"
+      Properties:
+        Description:  >
+            AWS Lambda Function that will create the website and upload it to the S3 bucket
+        Handler: "index.handler"
+        Role: !GetAtt lambdaIAMRole.Arn
+        Runtime: "nodejs12.x"
+        MemorySize: 256
+        Timeout: 120
+        Code:
+            S3Bucket: !Join ["-", [!FindInMap [FunctionMap, Configuration, S3Bucket], Ref: "AWS::Region"]]
+            S3Key: !Join ["", [!FindInMap [FunctionMap, Configuration, S3Key], 'WebSiteHelper.zip']]
+
+    checkHoursOfOperation:
+      Type: "AWS::Lambda::Function"
+      Properties:
+        Description:  >
+            AWS Lambda Function that will check the hours of operation and return the reason to Amazon Connect
+        Handler: "index.handler"
+        Role: !GetAtt lambdaIAMRole.Arn
+        Runtime: "nodejs12.x"
+        MemorySize: 256
+        Timeout: 120
+        Environment:
+            Variables:
+                tableName: !Ref callcenterhopTable        
+        Code:
+            S3Bucket: !Join ["-", [!FindInMap [FunctionMap, Configuration, S3Bucket], Ref: "AWS::Region"]]
+            S3Key: !Join ["", [!FindInMap [FunctionMap, Configuration, S3Key], 'HolidayCheck.zip']]
+            
+    
+    invokeWebSiteCreator:
+        Type: Custom::CreateWebSite
+        DependsOn: createWebSiteS3Bucket
+        Properties:  
+            ServiceToken:  !GetAtt webSiteCreator.Arn
+            bucketName: !Ref S3BucketNameForWebSite
+            customAction: configureWebsite
+            Region: !Ref AWS::Region
+            sourceS3Bucket: !Join ["-", [!FindInMap [FunctionMap, Configuration, S3Bucket], Ref: "AWS::Region"]]
+            sourceS3key: !Join ["", [!FindInMap [FunctionMap, Configuration, S3Key], 'website']]
+            destS3Bucket: !Ref S3BucketNameForWebSite
+            destS3KeyPrefix: callcenterhop
+            identityPoolId: !Ref BootCampCognitoIDPool
+            userPoolID: !Ref BootcampUserPool
+            appClientId: !Ref BootcampUserPoolClient
+            agentExtensionsTable: !Ref callcenterhopTable
+            manifestLocation: "callcenterhop/latest/cchop-web-site-manifest.json"
+    SNSRole:
+        Type: "AWS::IAM::Role"
+        Properties:
+          AssumeRolePolicyDocument: 
+            Version: "2012-10-17"
+            Statement:
+              - Effect: "Allow"
+                Principal: 
+                  Service: 
+                    - "cognito-idp.amazonaws.com"
+                Action: 
+                  - "sts:AssumeRole"
+          Policies:
+            - PolicyName: "bootcamp-userpool-ae-sns-policy"
+              PolicyDocument: 
+                Version: "2012-10-17"
+                Statement: 
+                  - Effect: "Allow"
+                    Action: "sns:publish"
+                    Resource: "*"            
+                    
+    BootcampUserPool:
+        Type: "AWS::Cognito::UserPool"
+        Properties:
+          UserPoolName: !Join 
+              - ''
+              - - !Ref AWS::StackName
+                - "-bootcamp-cchop-user-pool"          
+          AutoVerifiedAttributes:
+            - phone_number
+            - email
+          MfaConfiguration: "OFF"
+          SmsConfiguration:
+             ExternalId: !Sub bootcamp-cchop-external
+             SnsCallerArn: !GetAtt SNSRole.Arn
+          Policies:
+              PasswordPolicy:
+                    MinimumLength: 8
+                    RequireLowercase: False
+                    RequireNumbers: False
+                    RequireSymbols: False
+                    RequireUppercase: False
+             
+    BootcampUserPoolClient:
+        Type: "AWS::Cognito::UserPoolClient"
+        Properties:
+          ClientName: bootcamp-cchop-client
+          GenerateSecret: false
+          UserPoolId: !Ref BootcampUserPool
+                
+    BootCampCognitoIDPool:
+        Type: 'AWS::Cognito::IdentityPool'
+        Properties:
+            AllowUnauthenticatedIdentities: true
+            CognitoIdentityProviders: 
+                - ClientId: !Ref BootcampUserPoolClient
+                  ProviderName: !GetAtt BootcampUserPool.ProviderName            
+
+    BootcampCognitoIDIamRoleAuth:
+        Type: 'AWS::IAM::Role'
+        Properties:
+            AssumeRolePolicyDocument:
+                Version: 2012-10-17
+                Statement:
+                  - Effect: Allow
+                    Principal:
+                      Federated:
+                        - cognito-identity.amazonaws.com
+                    Action:
+                      - 'sts:AssumeRoleWithWebIdentity'
+                    Condition: { "ForAnyValue:StringLike": {"cognito-identity.amazonaws.com:amr": "authenticated" },  "StringEquals": {"cognito-identity.amazonaws.com:aud": !Ref BootCampCognitoIDPool}}
+            
+            Path: /
+            Policies:
+                - PolicyName: bootcamp-cchop-cognito-identity-authenticated
+                  PolicyDocument:
+                    Version: 2012-10-17
+                    Statement:
+                      -
+                        Effect: "Allow"
+                        Action:
+                          - "dynamodb:Query"
+                          - "dynamodb:Scan"
+                          - "dynamodb:PutItem"
+                          - "dynamodb:UpdateItem"
+                          - "dynamodb:GetRecords"
+                          - "dynamodb:GetShardIterator"
+                          - "dynamodb:DescribeStream"
+                          - "dynamodb:ListStreams"
+                          - "dynamodb:DeleteItem"                          
+                        Resource: 
+                            !Join 
+                                - ''
+                                - - 'arn:aws:dynamodb:'
+                                  - !Ref 'AWS::Region'
+                                  - ':'
+                                  - !Ref 'AWS::AccountId'
+                                  - ':'
+                                  - 'table/'
+                                  - !Ref callcenterhopTable
+                        
+                      -
+                        Effect: "Allow"
+                        Action:
+                          - "cognito-sync:DescribeIdentityPoolUsage"
+                          - "cognito-sync:QueryRecords"
+                          - "cognito-sync:DescribeDataset"
+                          - "cognito-sync:GetIdentityPoolConfiguration"
+                          - "cognito-sync:ListIdentityPoolUsage"
+                          - "cognito-sync:ListRecords"
+                          - "cognito-sync:DescribeIdentityUsage"
+                          - "cognito-sync:ListDatasets"
+                          - "cognito-sync:GetCognitoEvents"                          
+                        Resource: "*"
+                      - Effect: Allow
+                        Action:
+                          - 'mobileanalytics:PutEvents'
+                        Resource: '*'
+
+    BootcampCognitoIDIamRoleUnAuth:
+        Type: 'AWS::IAM::Role'
+        Properties:
+            AssumeRolePolicyDocument:
+                Version: 2012-10-17
+                Statement:
+                  - Effect: Allow
+                    Principal:
+                      Federated:
+                        - cognito-identity.amazonaws.com
+                    Action:
+                      - 'sts:AssumeRoleWithWebIdentity'
+                    Condition: { "ForAnyValue:StringLike": {"cognito-identity.amazonaws.com:amr": "unauthenticated" },  "StringEquals": {"cognito-identity.amazonaws.com:aud": !Ref BootCampCognitoIDPool}}
+            
+            Path: /
+            Policies:
+                - PolicyName: bootcamp-cchop-cognito-identity-authenticated
+                  PolicyDocument:
+                    Version: 2012-10-17
+                    Statement:
+                      - Effect: Allow
+                        Action:
+                          - 'mobileanalytics:PutEvents'
+                        Resource: '*'
+                        
+    BootcampCognitoIDIamRoleAttachment:
+        Type: "AWS::Cognito::IdentityPoolRoleAttachment"
+        Properties:
+            IdentityPoolId: !Ref BootCampCognitoIDPool
+            Roles: {"authenticated": !GetAtt BootcampCognitoIDIamRoleAuth.Arn, "unauthenticated": !GetAtt BootcampCognitoIDIamRoleUnAuth.Arn}
+
