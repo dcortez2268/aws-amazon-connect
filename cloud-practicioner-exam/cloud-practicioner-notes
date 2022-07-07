@@ -1,0 +1,135 @@
+EVERYDAY REVIEW:
+
+DAY ONE:
+cloud features:
+    high availability, unlimited capacity, on demand scalability, elasticity, cost savings, agility
+
+    high availability: highly available systems are designed to operate continuously without failure for a long time.  these systems avoid loss of service by reducing or managing failures.
+
+    elasticity: you can provision only what you need, and then grow and shrink based on demand.
+
+    agility: all the services you have access to help you innovate faster, giving you speed to market. 
+
+    durability: this means your data will remain intact without corruption.
+
+intro:
+    the aws certifified cloud practioner, CLF-CO1, verifies an overall knowledge of the AWS cloud independent
+    of a specific job role
+  validates the following:
+    explain the value of the aws cloud,
+    understand and explain the aws shared responsibility model,
+    understand security best practices,
+    understand aws cloud costs, economics, and billing practices,
+    describe and position the core aws services, including compute, network, databases, and storage,
+    identify aws services for common use cases
+
+TIP*: read Overview of Amazon Web Services whitepaper in full before the exam, and the day before the exam
+
+TIP*: learn the categories of services for each service, will go over later, ex: lambda is a compute service
+
+six advantages to cloud computing:
+    go global in minutes,
+    stop spending money running and maintaining data centers,
+    benefit from massive economies of scale, volume discounts are passed on to you,
+    increased speed and agility, 
+    stop guessing capacity,
+    trade capital expenses for variable expenses, you pay for what you use instead of making upfront investments
+
+capital expenditures, CapEx: upfront purchases toward fixed assets,
+operating expenses, OpEx: funds used to run day to day operations,
+
+TIP*: understand the six advantages and how cloud saves you money, also high avialability, elasticy, agility, and durability
+
+3 cloud computing models:
+
+IAAS, Infrastructure as a Service: model closest to you managing physical servers.  The cloud provider provides 
+                                  servers, however you manage virtual machine, os, runtime, as well.
+    use case: renting out fundemental building blocks,
+    ex: web hosting      
+
+PAAS, Platform as a Service: The cloud provider manages servers as well as os, virtual machine, and runtime,  
+                            you manage applications and data and access.
+    use case: used by developers, develop software using web based tools without worrying about underlying architecture
+
+SAAS, Software as a Service: The cloud provider manages all aspects of hardware, software, and application,
+                             you only manage data and access only.
+    use case: using a complete application, on demand, that someone offers to users,
+    ex: email providers
+
+3 cloud deployment models:
+    private, or on premise: 
+        exists in your internal data center, doesn't offer advantages of cloud computing, but does within your organization 
+    public cloud:
+        offered by aws,
+        provides all the advantages of cloud computing,
+        you aren't responsible for the physical hardware,
+    hybrid cloud: 
+        combination of public and private clouds,
+        you can store highly sensitive data locally but run web applications on aws infrastructure,
+        aws provides tools like direct connect so they can talk to each other
+
+region: a physical geographic location that is a collection of availability zones
+    each region is fully independent from other regions,
+    most resources are tied to a specific region
+
+AZ, availability zone: single data center or a collection of data centers within a region
+                availability zones are physically seperated but connected through low latency links
+                where you deploy your applications
+
+edge locations: cache content for fast delivery to your users made possible through cloudfront
+            by doing so edge locations reduce latency
+
+latency: time that passes between a user request and the resulting response
+
+how to access your aws account: aws management console and aws CLI
+            console: GUI you can access via web browser
+            access promgrammatically via cli or SDKs:
+                sometimes new features are available via the cli before the console
+                SDKS allow you to access aws services from popular programming languages
+
+root user: has unrestricted access and cannot be restricted, some things are only possible via root user
+            when you sign up for your account root user is created
+            best practice is to protect with multi factor authentication, MFA
+
+THERE ARE A LOT OF DIFFERENT SERVICES FOR AWS!  
+The main categories for the services are:
+    Compute, Storage, Content Delivery, Networking, databases, migration and transfer, analytics, machine learning, and developer tools
+
+EC2, Elastic compute cloud: allows you to rent and manage virtual servers in the cloud elastically,
+            ec2 instances are the virtual servers running on the physical servers,
+            instances are not considered serverless because they are located on actual servers
+    use cases: deploying a database gives you full control over the database,
+               deploy a web application, deploy to multiple azs to make web app highly available
+    access via: aws management console, ssh, 
+                ec2 instance connect (EIC): eic allows you to use IAM policies to control ssh access to your    
+                                            instances allowing you remove the need to manage SSH keys,
+                aws systems manager: allows you to manage your ec2 instances via web browser or CLI,
+most common way to connect to linux ec2 instances is via SSH:
+    first, generate a key pair,
+    second, connect via ssh, your ssh client uses private key and the ec2 instance uses public key
+
+pricing models: on demand, spot, reserved instances, dedicated hosts, savings plans
+    on demand: a fixed price in which you are billed down to the second based on the instance type & no contract
+            use when you care about low cost without any upfront payment or long term commitment,
+            use when your applications have unpredictable workloads that can't be interrupted
+    
+    spot: lets you take adavantage of unused ec2 capacity.  your requests are fulfilled only if capacity is available.  
+        cheapest option, 
+        your workloads can be interrupted
+
+    RIS, reserved instances: allow you to commit to a specific instance type in a particular region for 1 to 3 years
+        pay money upfront in order to receive a discount on on demand prices
+    
+    dedicated hosts: allows you to pay for a physical server that is fully dedicated to running your instances
+        use when you want to bring your own server bound software license from vendors like microsoft
+        use when you have regulatory or corporate compliance requirements around tenancy model
+
+
+
+
+
+
+
+
+
+

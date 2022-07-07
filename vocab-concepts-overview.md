@@ -1,4 +1,6 @@
 WEEK 1:
+data centers: server farms
+virtualization: lets you divide hardware resources on a single physical server into smaller units, called virtual machines
 contact centers: call centers,
 amazon connect: omni channel cloud contact center that helps companies provide superior customer service at lower cost,
 three deployment models for cloud computing: public cloud, private cloud, and hybrid cloud.
