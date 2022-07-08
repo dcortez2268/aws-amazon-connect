@@ -1,6 +1,11 @@
 EVERYDAY REVIEW:
+horizontal scaling: adds or subtracts ec2 instances
+vertical scaling: upgrading an ec2 instance by adding more power(cpu, ram) to an existing server
 
-DAY ONE:
+
+
+
+
 cloud features:
     high availability, unlimited capacity, on demand scalability, elasticity, cost savings, agility
 
@@ -91,6 +96,10 @@ root user: has unrestricted access and cannot be restricted, some things are onl
             when you sign up for your account root user is created
             best practice is to protect with multi factor authentication, MFA
 
+
+
+
+
 THERE ARE A LOT OF DIFFERENT SERVICES FOR AWS!  
 The main categories for the services are:
     Compute, Storage, Content Delivery, Networking, databases, migration and transfer, analytics, machine learning, and developer tools
@@ -104,6 +113,11 @@ EC2, Elastic compute cloud: allows you to rent and manage virtual servers in the
                 ec2 instance connect (EIC): eic allows you to use IAM policies to control ssh access to your    
                                             instances allowing you remove the need to manage SSH keys,
                 aws systems manager: allows you to manage your ec2 instances via web browser or CLI,
+    features: load balancing and auto scaling
+            elastic load balancer automatically distributes your incoming traffic across multiple ec2 instances
+                                types: classic, application, gateway, and network
+            ec2 auto horizontal scaling adds or replaces ec2 instances automatically across AZs, changes on need and demand
+    
 most common way to connect to linux ec2 instances is via SSH:
     first, generate a key pair,
     second, connect via ssh, your ssh client uses private key and the ec2 instance uses public key
@@ -124,7 +138,23 @@ pricing models: on demand, spot, reserved instances, dedicated hosts, savings pl
         use when you want to bring your own server bound software license from vendors like microsoft
         use when you have regulatory or corporate compliance requirements around tenancy model
 
+    savings plans:
+        for compute usage only, allows you to commit to compute service usage for 1 or 3 years,
+        use when you want to lower your bill across multiple compute services and also want flexibility to 
+            change compute services
 
+AWS LAMBDA: serverless compute service that lets you run code without managing servers
+        features:
+                write functions using many popular languages, via your favorite dev environment or console
+                scales automatically,
+                serverless, meaning you don't worry about managing servers like with EC2,
+        use cases:
+                for quick processes(<15 min timeout), ex: real time file processing,
+                lambda can execute your code in response to events,
+                performing backend business logic, 
+        pricing:
+                pay for only compute time used,
+                pay for request counts > 1 million requests each month
 
 
 

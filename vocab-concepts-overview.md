@@ -1,3 +1,6 @@
+EVERYDAY REVIEW:
+
+
 WEEK 1:
 data centers: server farms
 virtualization: lets you divide hardware resources on a single physical server into smaller units, called virtual machines
