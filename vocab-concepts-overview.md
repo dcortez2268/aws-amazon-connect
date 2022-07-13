@@ -1,8 +1,13 @@
 EVERYDAY REVIEW:
+hybrid model: allows you to connect on premises and public cloud
+why are auditing, monitoring, and logging important?
+    they help you gain insight into how well your systems are performing and help you proactively find and resolve errors
 
 
 WEEK 1:
 data centers: server farms
+data warehouse: a data storage solution that aggregates massive amounts of historical data from disparate 
+                sources
 virtualization: lets you divide hardware resources on a single physical server into smaller units, called virtual machines
 contact centers: call centers,
 amazon connect: omni channel cloud contact center that helps companies provide superior customer service at lower cost,
@@ -203,4 +208,9 @@ CHAT:
 reaching more customers with web and mobile chat on amazon connect post has a lot of useful information
 
 
+CUSTOMER PROFILES:
+    has all the information agents need during customer interactions in a single place. agents can quickly confirm the customer's identity and determine the reason for the call or chat.
 
+    A customer profile stores contact history combined with information about customers, such as account number, additional information, birth date, email, multiple addresses, name, and party type.
+
+    When you enable Amazon Connect Customer Profiles, you create a customer profiles domain: a container for all data, such as customer profiles, object types, profile keys, and encryption keys.

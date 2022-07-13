@@ -4,12 +4,10 @@ vertical scaling: upgrading an ec2 instance by adding more power(cpu, ram) to an
 
 
 
-
-
 cloud features:
     high availability, unlimited capacity, on demand scalability, elasticity, cost savings, agility
 
-    high availability: highly available systems are designed to operate continuously without failure for a long time.  these systems avoid loss of service by reducing or managing failures.
+    high availability: highly available systems are designed to operate continuously without failure for a long time and provide quick access to data.  these systems avoid loss of service by reducing or managing failures.
 
     elasticity: you can provision only what you need, and then grow and shrink based on demand.
 
@@ -81,8 +79,9 @@ AZ, availability zone: single data center or a collection of data centers within
                 availability zones are physically seperated but connected through low latency links
                 where you deploy your applications
 
-edge locations: cache content for fast delivery to your users made possible through cloudfront
+edge locations: mini data centers that hold cached content for fast delivery to your users made possible through cloudfront
             by doing so edge locations reduce latency
+distribution cache: name given to the collection of edge locations,
 
 latency: time that passes between a user request and the resulting response
 
@@ -143,6 +142,8 @@ pricing models: on demand, spot, reserved instances, dedicated hosts, savings pl
         use when you want to lower your bill across multiple compute services and also want flexibility to 
             change compute services
 
+COMPUTE SERVICES
+{
 AWS LAMBDA: serverless compute service that lets you run code without managing servers
         features:
                 write functions using many popular languages, via your favorite dev environment or console
@@ -155,6 +156,325 @@ AWS LAMBDA: serverless compute service that lets you run code without managing s
         pricing:
                 pay for only compute time used,
                 pay for request counts > 1 million requests each month
+
+AWS Fargate: serverless compute engine for containers,
+            allows you to manage containers, like Docker,
+            scales automatically,
+AWS Lightsail: allows you to quickly and cheaply launch all the resources you need for small preconfigured apps,
+AWS Outposts: allows you to run cloud services in your internal data center,
+            used for a hybrid experience, aws delivers and installs servers in your internal data servers,
+AWS Batch: allows you to process large workloads in smaller chunks, or batches,
+        dynamically provisions instances based on volume
+}
+STORAGE SERVICES
+{
+AWS S3: object storage service for the cloud that is highly available,
+        objects, or files, are stored in buckets, or directories,
+        essentially unlimited storage space,
+        objects can be public or private,
+        you can upload objects via the console, CLI, or programmatically via SDKs,
+        provides object versioning,
+        s3 access logs track access to buckets and objects,
+        bucket names must be globally unique
+        99.9999999% durability and 99.9999999% availability
+
+    security: you can set security at the bucket level or individual object level using ACLs, bucket policies, 
+                or access point policies,
+
+different storage classes, or ways to store your data:
+ s3 standard: recommended for frequently accessed data, general purpose, data stored across multiple AZs, 
+ s3 intelligent tiering: recommended for data with changing access patterns, automatically moves data to most 
+                        cost effective storage class, data stored across multiple AZs, 
+ s3 standard infrequent access: recommended for data accessed less frequently that required rapid access, 
+                            cheaper than s3 standard, stored across multiple AZs
+ s3 one zone-infrequent access: recommended for data accessed less frequently that required rapid access and 
+                                also availability and durability not essential because stored in only one AZ, costs 20% less than standard IA
+ s3 glacier: recommended for long term backups, cheaper storage options, data retrieval takes longer, stored 
+            across multiple AZs, 
+ s3 glacier deep archive: recommended for long term backups accessed once or twice a year or retaining data for 
+                        regulatory compliance requirements, cheapest, data retrieval takes longer than s3 glacier, stored across multiple AZs, 
+ s3 outposts: recommended for data that needs to be kept local, provides object storage on premises
+
+        s3 use cases:
+            deploy static websites to s3 and use cloudfront for global distribution,
+            data archival, use glacier as a storage option,
+            analytics systems: store data in s3 for analytics services like redshift and athena,
+            mobile applications: mobile app users can upload files to an s3 bucket
+
+OTHER STORAGE OPTIONS:
+    ec2 storage options: EBS, EFS, instance store,
+
+EBS, elastic block store: storage device, a volume, that can be attached to or removed from your instance,
+                        data persists when instance is not running, 
+                        can only be attached to one instance in same AZ,
+                        recommended for quickly accessible data, running a database on an instance, long term data storage
+EC2 instance Store: local storage that is physically attached to the host computer and cannot be removed,
+                storage on disks physically attached to an instance,
+                storage is temporary since data loss occurs when ec2 instance is stopped,
+                faster with higher i/o speeds,
+                recommended for temporary storage needs, data replicated across several instances
+
+EFS, elastic file system: serverless network file system for sharing files,
+                        only supports linux system,
+                        available across different AZs in the same region,
+                        more expensive than EBS,
+                        recommended for main directories for business critical apps or lift and shift enterprise apps
+    
+storage gateway: hybrid storage service,
+                connects on premises and cloud data,
+                recommended for moving backups to the cloud, reducing costs for hybrid cloud storage, low latency access to data
+
+aws backup: helps you manage data backups across multiple aws services
+            integrates with resources like ec2, ebs, efs, and more,
+            creates a backup plan that includes frequency and retention,
+}
+
+CONTENT DELIVERY SERVICES
+{
+Cloudfront: a CDN that delivers data and applications globally with low latency,
+            speeds up delivery of static and dynamic web content by using edge locations to cache content
+
+    use cases: often used with s3 to deploy content globally,
+               prevent attacts like DDos,
+               IP address blocking
+
+AWS global accelerator: speeds up delivery by sending your users through the aws global network when accessing 
+                        your content
+                        improves latency and availability of single region applications, roughly 60%
+
+AWS s3 Transfer Acceleration: improves content uploads and downloads to and from s3 buckets,
+                              fast transfer of files over long distances via using edge locations,
+                              customers around the world can upload to a central bucket
+}
+
+
+
+NETWORKING SERVICES
+{
+    VPC: virtual private cloud, allows you to create a secure private network in the AWS cloud where you launch 
+        your resources,
+        isolate, launch, and protect resources inside the VPC,
+        spans AZs in a region
+        
+        VPC peering: facilitates the transfer of data in a secure manner between 2 VPCs
+
+        subcomponents:
+            subnet: allows you to split the network inside the VPC.  This is where you launch resources like 
+                    ec2 instances,
+                    can be private or public,
+
+            public subnet => NACL => ROUTER/router table => internet gateway => the internet
+
+Network ACL: access control lists ensure the proper traffic is allowed into the subnet
+Router and route table: defines where network traffic is routed
+internet gateway: allows public traffic to the internet from a VPC
+
+additional networking services:
+    
+    ROUTE 53: DNS services that routes users to applications,
+            also performs health checks on aws resources, supports hybrid model as well
+
+    DIRECT CONNECT: dedicated physical network connection from your on premises data center to AWS, supports 
+                    hybrid model, data travels over private physical network connection
+            use cases:
+                large datasets that you need to transfer to AWS,
+                transfer internal data directly to AWS, bypassing your ISP,
+                hybrid cloud model
+
+    AWS VPN: site to site VPN creates a secure connection between your internal networks and your AWS VPCs,
+            similar to direct connect but data travels over the public internet,
+            data automatically encrypted,
+            slightly cheaper than direct connect
+        
+            use cases:
+                site to site vpn makes moving applications easier
+
+    API Gateway: allow syou to build and manage APIs,
+                apis allows you to share data between systems,
+                integrate with services like lambda
+}
+
+
+
+DATABASES: 
+{
+    in the aws ecosystem, there are many different types of databases that support different use cases
+        RDS, Aurora: relational,
+        DynamoDB: non-relational,
+        Neptune: graph,
+        ElastiCache: in memory data stores,
+        DocumentDB: document
+
+    RDS: service that launches and manages relational databases,
+        supports popular database engines, aurora, postreSQL, MySQL, MariaDB, Oracle, and SQL server
+        offers high availability, multi AZ deployment,
+        aws manages the database,
+        launch read only databases, or read replicas, across regions in order to provide enhanced performance and durability
+
+        aurora: relational database compatible with MySQL and PostgreSQL that was created by AWS,
+            5x faster than MySQL and 3x faster than PostgreSQL,
+            scales automatically while proivding durability and high availability, managed by RDS,
+
+    DynamoDB: fully managed NoSQL key value and document database,
+            scales automatically to massive workloads with fast performance
+    DocumentDB: fully managed document database that supports MongoDB,
+                document database,
+
+    ElastiCasche: fully managed in memory datastore compatible with Redis or Memcached
+                if you're regularly reading from intensive database, reduces load,
+                improves performance and low latency
+    
+    Neptune: fully managed graph database that supports highly connected datasets
+            good for highly connected datasets like social media networks
+}
+
+MIGRATION AND TRANSFER SERVICES 
+{
+    DMS: Database migration Service, helps you migrate databases to or within AWS,
+        migrate on premise databases to AWS, or an existing aws database to another aws database
+        supports homogeneous and heterogeneous migrations,
+        no downtime and provides continuous data replication
+
+    SMS: Server Migration Service, allow you to migrate on premises servers to AWS,
+        migrates on premises serverS to AWS,
+        server is saved as new AMI, machine image, and that image is used to launch servers as ec2 instances
+
+    SnowFamily: allows you to transfer data from on premise to aws using a physical device.  Available devices 
+                are Snowcone, Snowcone and Snowball, Snowmobile,
+                more cost effective and faster,
+                used when you have large amounts of data,
+                snowbal edge supports ec2 and lambda
+    
+    DataSync: allows for online data transfer from on premises to aws storage services like S3 or EFS
+            copy data over direct connect or internet,
+            replicate data cross region or cross account,
+}
+
+
+ANALYTICS SERVICES
+{
+    Redshift: scalable data warehouse solution,
+            handles exabyte scale data,
+        use cases:
+            when you need to consolidate multiple data sources for reporting,
+            when you are running database that doesn't require real time transaction processing
+
+    Athena: query service that analyzes S3 data using SQL
+            pay per query,
+            serverless
+    
+    Glue: prepares your data for analytics
+          ETL service, extract, transform, then loads data
+
+    Kinesis: allows you to analyze data and video streams in real time,
+            supports video, audio, application logs, website clickstreams, and IOT,
+   
+    EMR: elastic mapreduce, heps you process large amounts of data, think data mining and machine learning
+        analyze data using hadoop or other big data frameworks
+    
+    Data Pipeline: allows you to move data between compute and storage services running either on aws or on 
+                    premises
+                 moves data based on conditions, sends notifications on success or failure
+
+    Quicksight: helps you visualize your data by using interactive dashboards
+}
+
+MACHINE LEARNING SERVICES
+{
+    Rekognition: allows you to automate your image and video analysis
+    Comprehend: NLP service that finds relationships in text
+                use cases:
+                    customer sentiment
+
+    Polly: turns text into speech
+        several voices across many languages in natural speech, can create custom voice,
+
+    SageMaker:helps you build, train, and deploy machine learning models quickly
+            prepare data for models, train and deploy models,
+            provides deep learning AMIs
+        use cases: 
+            recommendation engines
+
+    Translate: provides language translation
+            translates many languages in real time and many content formats
+
+    Lex: helps you build conversational interfaces like chatbots
+        recognize speech and understands language,
+        build highly engaging chatbots,
+        powers amazon alexa
+        use cases:
+            integrate voice into a device,
+            power chatbots
+}
+
+DEVELOPER TOOLS
+{
+    Cloud9: allows you to write code within an IDE from within your web browser
+            supports popular programming languages
+            use cases:
+                build serverless applications, preconfigures environment with needed SDKs and libraries
+    
+    CodeCommit: source control system for private Git repositories
+
+    CodeBuild: allows you to build and test your application source code
+            compiles source code and runs tests
+            enable continuous integration and delivery
+            produces build artifacts ready to be deployed
+
+    CodeDeploy: manages the deployment of code to compute services in the cloud or on premises  
+                deploys code to EC2, Fargate, Lambda, and on premises
+
+    CodePipeline: integrates with codecommit, codebuild, and codedeploy to implement ci/cd pipeline
+                  automates the software release process, quickly deliver new features and updates,
+                  
+    X-ray: helps you debug production applications
+           allows you to map requests made to your RDS database
+    
+    CodeStar: helps developers collaboratively work on development projects
+            contains issue tracking dashboard,
+            can help you manage the development pipeline by integrating with codecommit, codebuild, codedeploy
+}
+
+DEPLOYMENT AND INFRASTRUCTURE MANAGEMENT SERVICES 
+{
+    CloudFormation: allows you to provision AWS resources using Infrastructure as Code, IAC
+                  create templates for the resources you want to provision
+    
+    Elastic Beanstalk: allows you to deploy your web apps and web services to aws cloud
+                    automatically handles deployment
+                    monitors application health via a health dashboard
+                    technically a compute service
+    
+    OpsWorks: allows you to use Chef or Puppet to automate the configuration of your servers and deploy code
+            can be used with on premise servers or ec2 instances in aws cloud
+}      
+
+MESSAGING AND INTEGRATION SERVICES
+{
+    SQS: simple queue service, message queieng services that allows you to build loosely coupled systems
+        allows component to component communication using messages,
+        multiple components, or producers, can add messages to the queue,
+        messages are processed in an asynchronous manner
+
+    SNS: simple notification service, allows you to send emails and text messages from your applications
+        publish messages to a topic, 
+        subscribers receive messages,
+        can work with cloudwatch to send notifications based on metrics
+
+    SES: simple email service, email service that allows you to send richly formatted html emails from your apps
+        for professional emails, marketing emails etc
+}
+
+AUDITING, MONITORING, AND LOGGING SERVICES
+{
+    Cloudwatch: collection of services that help you monitor and observe your cloud resources
+                collects metrics, logs, and events, and sets alarms
+                detects anomalies
+    
+    CloudTrail: tracks user activity and API calls within your account
+                track activity through the console, SDKs, and CLI,
+                you can track username, event time and name, IP, access key, region, and error code
+}
 
 
 
