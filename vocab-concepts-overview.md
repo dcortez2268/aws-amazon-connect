@@ -3,6 +3,7 @@ hybrid model: allows you to connect on premises and public cloud
 why are auditing, monitoring, and logging important?
     they help you gain insight into how well your systems are performing and help you proactively find and resolve errors
 data dip: retrieve information about a contact
+CTR: contact trace record, data about contacts is captured in ctrs, entails recordings or metrics about contact
 
 
 WEEK 1:
@@ -215,3 +216,14 @@ CUSTOMER PROFILES:
     A customer profile stores contact history combined with information about customers, such as account number, additional information, birth date, email, multiple addresses, name, and party type.
 
     When you enable Amazon Connect Customer Profiles, you create a customer profiles domain: a container for all data, such as customer profiles, object types, profile keys, and encryption keys.
+
+CASES
+{
+    cases: represents a customers issue.  It is created to record the customers issue, the steps and interactions taken to resolve the customer's issue, and the outcome.  
+
+    case fields: building blocks for case templates,
+                two types: system case fields and custom case fields
+
+    case templates: cases are always created based on a template, they are forms that ensure agents collect and 
+                    reference the right information for different types of customer issues
+}
