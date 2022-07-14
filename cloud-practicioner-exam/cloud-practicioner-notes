@@ -2,8 +2,6 @@ EVERYDAY REVIEW:
 horizontal scaling: adds or subtracts ec2 instances
 vertical scaling: upgrading an ec2 instance by adding more power(cpu, ram) to an existing server
 
-
-
 cloud features:
     high availability, unlimited capacity, on demand scalability, elasticity, cost savings, agility
 
@@ -160,6 +158,9 @@ AWS LAMBDA: serverless compute service that lets you run code without managing s
 AWS Fargate: serverless compute engine for containers,
             allows you to manage containers, like Docker,
             scales automatically,
+        EKS lets you run your containerized Kubernetes applications on both Amazon EC2 and AWS Fargate.
+        ECS lets you run your containerized Docker applications on both Amazon EC2 and AWS Fargate.
+            
 AWS Lightsail: allows you to quickly and cheaply launch all the resources you need for small preconfigured apps,
 AWS Outposts: allows you to run cloud services in your internal data center,
             used for a hybrid experience, aws delivers and installs servers in your internal data servers,
@@ -447,6 +448,9 @@ DEPLOYMENT AND INFRASTRUCTURE MANAGEMENT SERVICES
     
     OpsWorks: allows you to use Chef or Puppet to automate the configuration of your servers and deploy code
             can be used with on premise servers or ec2 instances in aws cloud
+
+    Marketplace: digital catalog of prebuilt solutions you can purchase or license.  You may also use it to sell
+                solutions to others
 }      
 
 MESSAGING AND INTEGRATION SERVICES
@@ -476,10 +480,105 @@ AUDITING, MONITORING, AND LOGGING SERVICES
                 you can track username, event time and name, IP, access key, region, and error code
 }
 
+EXPLORING ADDITIONAL SERVICES
+{
+    WorkSpaces: allows you to host virtual desktops in the cloud
+                virtualize windows or linux desktops
+                enables employees to work from home
+    
+    Amazon Connect: cloud contact center service
+                provides customer service functionality and improves productivity of help desk agents
+}
 
 
+SECURITY AND COMPLIANCE SECTION, ROUGHLY 25% OF EXAM
 
 
+shared responsibility model: in public cloud, there is a shared security responsibility between you and AWS
+                                aws is responsible for security of the cloud,
+                                you are responsible for security in the cloud
+        security of cloud: responsible for protecting and securing their infrastructure   
+        security in cloud: responsible for how the services are implemented and managing your application data
 
+Well-architected framework: 5 pillars that describe design principles and best practices for workloads in cloud
+    operational excellence: script operations as code, deploy smaller, reversible changes, plan for and anticipate failure
+            use aws codeCommit, and cloudFormation
+
+    security: automate security tasks, encrypt data in transit and at rest, assign least privileges, track changes, ensure security at all layers
+            use CloudTrail
+
+    reliability: recover from failure automatically and test these procedures, scale horizontally, reduce idle resources, manage change through automation
+            use RDS 
+
+    performance efficiency: user serverless architectures first, use multi region deployments, experiment w virtual resources   
+            use Lambda
+
+    cost optimization: utilize consumption based pricing, pay for only resources your app requires, measure efficiency
+            s3 Intelligent Tiering
+
+IAM USERS AND PERMISSIONS
+{
+IAM: allows you to control access to your AWS services and resources
+    you define who has access and what they can do
+
+users: entities you create in IAM to represent the person or application needing to access your aws resources
+
+IAM role: roles define access permissions via policies and are temporarily assumed by an IAM user, 
+
+IAM policy: JSON document that allows or denies permissions for IAM users, groups, and roles
+
+principle of least privilege: involves giving a user the minum access required to get the job done
+
+groups: collection of IAM users that helps you apply common access controls to all group members
+      access is assigned using policies and roles
+
+tasks that require root credentials: change account settings, restore IAM user permissions, close account
+
+Best practices: create individual users instead of using root, use roles for ec2 instances, enable MFA for 
+                privileged users
+
+IAM credential report: lists all users in your account and the status of their various credentials
+}
+
+APPLICATION SECURITY SERVICES
+{
+    WAF: Web Application firewall, helps protect your web applications against common web attacks
+        protects apps against common attack patterns, including sql injection and cross site scripting
+    
+    Shield: managed DDoS protection service,
+            always on
+            shield standard is free while shield advanced is a paid service
+
+    Macie: helps you discover and protect sensitive data
+         uses machine learning and evaluates s3 environment
+
+    Config: allows you to assess, audit, and evaluate the configurations of your resources
+            notifications via SNS of every configuration change, and delivers history file to s3
+
+    GuardDuty: intelligent threat detection system that uncovers unauthorized behavior
+                uses machine learning and has built in detection for ec2, s3, api calls, and IAM
+    
+    Inspector: only works with ec2 isntances to uncover and report vulnerabilities
+
+    Artifact: offers on demand access to AWS security and compliance reports
+            central repository for compliance reports from third party auditors
+    
+    Cognito: helps you control access to mobile and web applications
+            provides authentication and authorization
+}
+
+DATA ENCRYPTION AND SECRETS MANAGEMENT SERVICES
+{
+    data in flight: data that is moving from one location to another
+    data at rest: data that is being stored somewhere to be used later
+
+    KMS: allows you to generate and store encryption keys, keys are managed by aws
+        automatically enabled for certain services like cloudtrail logs, s3 glacier, and storage gateway
+
+    CloudHSM: hardware security module used to generate encryption keys, you manage the keys
+
+    Secrets Manager: allows you to manage and retrieve secrets (passwords or keys)
+                    built in integration for RDS, Redshift, and documentDB
+}
 
 

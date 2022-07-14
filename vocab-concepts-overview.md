@@ -2,6 +2,7 @@ EVERYDAY REVIEW:
 hybrid model: allows you to connect on premises and public cloud
 why are auditing, monitoring, and logging important?
     they help you gain insight into how well your systems are performing and help you proactively find and resolve errors
+data dip: retrieve information about a contact
 
 
 WEEK 1:
@@ -187,7 +188,7 @@ utterances: configured phrases that can be typed or spoken to invoke a given int
 intents: result in an action based on our user input, input can be received through text or natural language understanding
     can have several slots and each slot has a type
 slots: are the actual input data from a customer required to fulfill an intent, basically like a variable
-fullfillment: how the request is ocmpleted after the customer contact has provided all information required to 
+fullfillment: how the request is completed after the customer contact has provided all information required to 
             fullfill intent.  could be passed to lambda or return the information back to the client via response
 
 CHAT:
