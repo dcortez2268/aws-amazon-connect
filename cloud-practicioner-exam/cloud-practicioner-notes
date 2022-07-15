@@ -671,6 +671,7 @@ SUPPORT PLANS
 
     Developer: starts at 29$ a month and is recommended for testing and development
                 start of guaranteed response times,
+                Customers on the Developer Support plan can submit support cases for account and billing questions, service limit increases, and technical support cases via email only.
 
     Business: starts at 100$ a month and is recommended for production workloads
              unlimited contacts, cases and a full set of trusted advisor checks
@@ -679,7 +680,8 @@ SUPPORT PLANS
     enterprise: starts at 15,000 a month and is recommended for business or mission critical production 
                 workloads
                 a lot including technical account manager and concierge response team, quick response times
-              
+                While customers on the Enterprise Support plan have access to TAMs, TAMs typically provide proactive best-practice guidance and assistance with architecting, developing, and running AWS solutions.
+                Use the AWS Support API to programmatically open a case with AWS Support.
 
     support cases: account and billing, service limit increases, technical support
 }
