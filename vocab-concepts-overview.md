@@ -11,7 +11,9 @@ virtualization: lets you divide hardware resources on a single physical server i
 
 contact centers: call centers,
 
-amazon connect: omni channel cloud contact center that helps companies provide superior customer service at lower cost, ease of customization is a huge benefit for amazon connect, allows for incredible customer experiences because we can customize them to fit business needs.  This power derives from lambda, and other crm integrations. 
+amazon connect: omni channel cloud contact center that helps companies provide superior customer service at lower cost,
+    ease of customization is a huge benefit for amazon connect, 
+    allows for incredible customer experiences because we can customize them to fit business needs.  This power derives from lambda, and other crm integrations. 
 
 omni channel contact centers: various channels within single stream provide access to consolidated data, agent 
 can easily switch between channels, and allows customers to switch from one channel to another
@@ -38,7 +40,7 @@ queue: waiting area that holds contacts to be answered by agents
 
 prompts: audio files played in call flows
 
-contact: interaction with a customer in your contact center
+contact: interaction with a customer in your contact center, can be voice, chat, task
 
 contact attributes: refer to key value pairs that contain data about a contact, they allow you to pass data between amazon connect and other services
 
@@ -50,7 +52,8 @@ IVR, interactive voice responses: used to assist contacts navigating through the
 
 cases: represents a customers issue.  It is created to record the customers issue, the steps and interactions taken to resolve the customer's issue, and the outcome.
 
-lex: uses speech recognition and nlp to build an intricate chat bot provides an incredible amount of customization through the use of attributes in lambda
+lex: helps you build conversational interfaces via recognizing speech and understanding language,
+        build highly engaging chatbots, IVR systems with integration with lambda,
 
 CUSTOMER PROFILES: has all the information agents need during customer interactions in a single place. agents can quickly confirm the customer's identity and determine the reason for the call or chat.
 
