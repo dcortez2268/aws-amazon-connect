@@ -398,9 +398,9 @@ MACHINE LEARNING SERVICES
     Translate: provides language translation
             translates many languages in real time and many content formats
 
-    Lex: helps you build conversational interfaces like chatbots
+    Lex: helps you build conversational interfaces 
         recognize speech and understands language,
-        build highly engaging chatbots,
+        build highly engaging chatbots, IVR systems with integration with lambda,
         powers amazon alexa
         use cases:
             integrate voice into a device,
