@@ -12,11 +12,18 @@ agility: all the services you have access to help you innovate faster, giving yo
 
 durability: this means your data will remain intact without corruption.
 
+high availability: highly available systems are designed to operate continuously without failure for a long time and provide quick access to data.  these systems avoid loss of service by reducing or managing failures.
+
 cloud features:
     high availability, unlimited capacity, on demand scalability, elasticity, cost savings, agility
 
-    high availability: highly available systems are designed to operate continuously without failure for a long time and provide quick access to data.  these systems avoid loss of service by reducing or managing failures.
-
+six advantages to cloud computing:
+    go global in minutes,
+    stop spending money running and maintaining data centers,
+    benefit from massive economies of scale, volume discounts are passed on to you,
+    increased speed and agility, 
+    stop guessing capacity,
+    trade capital expenses for variable expenses, you pay for what you use instead of making upfront investments
 
 
 
@@ -30,26 +37,14 @@ intro:
     understand aws cloud costs, economics, and billing practices,
     describe and position the core aws services, including compute, network, databases, and storage,
     identify aws services for common use cases
-
 TIP*: read Overview of Amazon Web Services whitepaper in full before the exam, and the day before the exam
-
 TIP*: learn the categories of services for each service, will go over later, ex: lambda is a compute service
 
-six advantages to cloud computing:
-    go global in minutes,
-    stop spending money running and maintaining data centers,
-    benefit from massive economies of scale, volume discounts are passed on to you,
-    increased speed and agility, 
-    stop guessing capacity,
-    trade capital expenses for variable expenses, you pay for what you use instead of making upfront investments
 
 capital expenditures, CapEx: upfront purchases toward fixed assets,
 operating expenses, OpEx: funds used to run day to day operations,
 
-TIP*: understand the six advantages and how cloud saves you money, also high avialability, elasticy, agility, and durability
-
 3 cloud computing models:
-
 IAAS, Infrastructure as a Service: model closest to you managing physical servers.  The cloud provider provides 
                                   servers, however you manage virtual machine, os, runtime, as well.
     use case: renting out fundemental building blocks,
@@ -100,10 +95,6 @@ root user: has unrestricted access and cannot be restricted, some things are onl
             when you sign up for your account root user is created
             best practice is to protect with multi factor authentication, MFA
 
-
-
-
-
 THERE ARE A LOT OF DIFFERENT SERVICES FOR AWS!  
 The main categories for the services are:
     Compute, Storage, Content Delivery, Networking, databases, migration and transfer, analytics, machine learning, and developer tools
@@ -127,6 +118,7 @@ most common way to connect to linux ec2 instances is via SSH:
     second, connect via ssh, your ssh client uses private key and the ec2 instance uses public key
 
 pricing models: on demand, spot, reserved instances, dedicated hosts, savings plans
+    
     on demand: a fixed price in which you are billed down to the second based on the instance type & no contract
             use when you care about low cost without any upfront payment or long term commitment,
             use when your applications have unpredictable workloads that can't be interrupted

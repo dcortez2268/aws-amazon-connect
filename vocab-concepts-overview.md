@@ -56,6 +56,12 @@ CUSTOMER PROFILES: has all the information agents need during customer interacti
 
 effective rate for employees: focusing on increasing productivity rather than quantity of employees to negate need for more workers and also to increase wages to increase employee retainment rate
 
+Serverless computing: means that your code runs on servers without needing to provision or manage the 
+                    servers. the cloud service provider automatically provisions, scales, and manages the 
+                    infrastructure required to run code.  These architectures are highly scalable and event driven.  They use resources only when a specific function or trigger occurs.  
+
+
+
 WEEK 1:
 three deployment models for cloud computing: public cloud, private cloud, and hybrid cloud.
 Amazon EC2, Amazon Elastic Compute Cloud: a service that lets you run virtual servers in the cloud, provides secure, resizable compute capacity in the cloud as EC2 instances
@@ -69,9 +75,6 @@ PAAS, Platform as a Service: The cloud provider manages servers as well as os, v
 SAAS, Software as a Service: The cloud provider manages all aspects of hardware, software, and application,
                              you only manage data and access only.
 
-Serverless computing: means that your code runs on servers without needing to provision or manage the 
-                    servers.the cloud service provider automatically provisions, scales, and manages the 
-                    infrastructure required to run code.  These architectures are highly scalable and event driven.  They use resources only when a specific function or trigger occurs.  
 AWS LAMBDA: service for serverless computing, (allows you to run code without needing to provision or manage 
             servers ), triggers in response to events, and scales automatically,
 Amazon SQS, Simple Queue Service: service that allows you to send, store, and receive messages between software 
