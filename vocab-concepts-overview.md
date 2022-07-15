@@ -1,23 +1,65 @@
 EVERYDAY REVIEW:
-hybrid model: allows you to connect on premises and public cloud
-why are auditing, monitoring, and logging important?
-    they help you gain insight into how well your systems are performing and help you proactively find and resolve errors
 data dip: retrieve information about a contact
+
 CTR: contact trace record, data about contacts is captured in ctrs, entails recordings or metrics about contact
 
+data centers: server farms
+
+data warehouse: a data storage solution that aggregates massive amounts of historical data from disparate sources
+
+virtualization: lets you divide hardware resources on a single physical server into smaller units, called virtual machines
+
+contact centers: call centers,
+
+amazon connect: omni channel cloud contact center that helps companies provide superior customer service at lower cost, ease of customization is a huge benefit for amazon connect, allows for incredible customer experiences because we can customize them to fit business needs.  This power derives from lambda, and other crm integrations. 
+
+omni channel contact centers: various channels within single stream provide access to consolidated data, agent 
+can easily switch between channels, and allows customers to switch from one channel to another
+
+voice channel: traditional inbound or outbound voice communications
+chat: proactive or reactive chat sessions through a web site or mobile app
+tasks: allow agents to create and complete tasks in an automated process
+
+cloud computing: is the delivery of computing services over the internet by using a pay as you go pricing model.  You are billed only for what you use which helps you: lower your operating costs, run your infrastructure more efficiently, scale as your business needs change.  You are basically renting computing power and storage from someone else's datacenter.  
+
+containers: provide you with a standard way to package your application's code and dependencies into a single object.  Also used for processes and workflows in which there are essential requirements for security, reliability, and scalability.  
+
+CCP, contact control panel: customizable interface that agents use to engage with contacts across multiple 
+                        channels
+
+contact flows: features that let you define the customer experience within the contact center from start to 
+finish, you can play prompts, get input data, invoke lambda functions, and integrate lex bot, and so much more because they can integrate with CRMs and databases to dynamically adapt the experience based on customer or history 
+
+routing profile: links a collection of queues to agents and determines the contacts that an agent receives and routing priority
+
+consider when creating connect instance: customers' location, agents' location, regulatory or compliance data requirements,
+
+queue: waiting area that holds contacts to be answered by agents
+
+prompts: audio files played in call flows
+
+contact: interaction with a customer in your contact center
+
+contact attributes: refer to key value pairs that contain data about a contact, they allow you to pass data between amazon connect and other services
+
+quick connects: a list of destinations for common transfers, can be external number, agent, or queue
+
+agent: employees or customer service representative taking calls
+
+IVR, interactive voice responses: used to assist contacts navigating through the existing queues to reach an agent that is able to assist them
+
+cases: represents a customers issue.  It is created to record the customers issue, the steps and interactions taken to resolve the customer's issue, and the outcome.
+
+lex: uses speech recognition and nlp to build an intricate chat bot provides an incredible amount of customization through the use of attributes in lambda
+
+CUSTOMER PROFILES: has all the information agents need during customer interactions in a single place. agents can quickly confirm the customer's identity and determine the reason for the call or chat.
+
+effective rate for employees: focusing on increasing productivity rather than quantity of employees to negate need for more workers and also to increase wages to increase employee retainment rate
 
 WEEK 1:
-data centers: server farms
-data warehouse: a data storage solution that aggregates massive amounts of historical data from disparate 
-                sources
-virtualization: lets you divide hardware resources on a single physical server into smaller units, called virtual machines
-contact centers: call centers,
-amazon connect: omni channel cloud contact center that helps companies provide superior customer service at lower cost,
 three deployment models for cloud computing: public cloud, private cloud, and hybrid cloud.
 Amazon EC2, Amazon Elastic Compute Cloud: a service that lets you run virtual servers in the cloud, provides secure, resizable compute capacity in the cloud as EC2 instances
 EC2 scalability: begin with only the resources you need and designing your architecture to automatically respond to changing demand by scaling in or out,
-cloud computing: is the delivery of computing services over the internet by using a pay as you go pricing 
-                model.  You are billed only for what you use which helps you: lower your operating costs, run your infrastructure more efficiently, scale as your business needs change.  You are basically renting computing power and storage from someone else's datacenter.  
 
 On premises, Private Cloud: you manage everything from servers to application.  
 IAAS, Infrastructure as a Service: model closest to you managing physical servers.  The cloud provider provides 
@@ -36,8 +78,6 @@ Amazon SQS, Simple Queue Service: service that allows you to send, store, and re
                                 components, other services, or users, without losing messages or requiring other services to be available.
 Amazon Simple Notification Service, (SNS): publish/subscribe service where subscribers can be web servers, 
                                     email addresses, lambda functions, or several other options. 
-containers: provide you with a standard way to package your application's code and dependencies into a single 
-            object.  Also used for processes and workflows in which there are essential requirements for security, reliability, and scalability.  
 Amazon Elastic Container Service, (ECS): container management system that enables you to run and scale 
                                         containerized applications in AWS, highly scalable, high performance, supports Docker containers (most popular)
 Amazon EKS, Elastic Kubernates Service: fully managed service that you can use to rub Kubernetes on AWS, 
@@ -123,14 +163,11 @@ CX, customer experience: the process design teams follow to optimize customer ex
 
 
 WEEK 3:
-effective rate for employees: focusing on increasing productivity rather than quantity of employees to negate 
-                        need for more workers and also to increase wages to increase employee retainment rate
+effective rate for employees: focusing on increasing productivity rather than quantity of employees to negate need for more workers and also to increase wages to increase employee retainment rate
 how to improve:
     geo strategy: optimize geographic footprint by placing work in most cost efficient locations,
-    optimize cx delivery: make employees feel valued by enabling hybrid workplaces to meet employee needs, 
-                        implement efficient software and processes to help emloyees tasks become easier,
-    leverage technology: automation reduces cost and employee effort, improves productivity while providing 
-                        superior service
+    optimize cx delivery: make employees feel valued by enabling hybrid workplaces to meet employee needs, implement efficient software and processes to help emloyees tasks become easier,
+    leverage technology: automation reduces cost and employee effort, improves productivity while providing superior service
 
 omni channel contact centers: various channels within single stream provide access to consolidated data, agent 
                             can easily switch between channels, and allows customers to switch from one channel to another
@@ -145,6 +182,7 @@ contact flows: features that let you define the customer experience within the c
 routing profile: links a collection of queues to agents and determines the contacts that an agent receives and routing priority
 
 Amazon Connect features a native integration with amazon Lex for NLP over text and voice
+
 consider when creating connect instance: customers' location, agents' location, regulatory or compliance data 
                             requirements, on premise, cloud, or saas workloads that integrate to contact center
 

@@ -1,17 +1,24 @@
 EVERYDAY REVIEW:
 horizontal scaling: adds or subtracts ec2 instances
+
 vertical scaling: upgrading an ec2 instance by adding more power(cpu, ram) to an existing server
+
+why are auditing, monitoring, and logging important?
+    they help you gain insight into how well your systems are performing and help you proactively find and resolve errors
+
+elasticity: you can provision only what you need, and then grow and shrink based on demand.
+
+agility: all the services you have access to help you innovate faster, giving you speed to market. 
+
+durability: this means your data will remain intact without corruption.
 
 cloud features:
     high availability, unlimited capacity, on demand scalability, elasticity, cost savings, agility
 
     high availability: highly available systems are designed to operate continuously without failure for a long time and provide quick access to data.  these systems avoid loss of service by reducing or managing failures.
 
-    elasticity: you can provision only what you need, and then grow and shrink based on demand.
 
-    agility: all the services you have access to help you innovate faster, giving you speed to market. 
 
-    durability: this means your data will remain intact without corruption.
 
 intro:
     the aws certifified cloud practioner, CLF-CO1, verifies an overall knowledge of the AWS cloud independent
@@ -449,8 +456,6 @@ DEPLOYMENT AND INFRASTRUCTURE MANAGEMENT SERVICES
     OpsWorks: allows you to use Chef or Puppet to automate the configuration of your servers and deploy code
             can be used with on premise servers or ec2 instances in aws cloud
 
-    Marketplace: digital catalog of prebuilt solutions you can purchase or license.  You may also use it to sell
-                solutions to others
 }      
 
 MESSAGING AND INTEGRATION SERVICES
@@ -580,5 +585,112 @@ DATA ENCRYPTION AND SECRETS MANAGEMENT SERVICES
     Secrets Manager: allows you to manage and retrieve secrets (passwords or keys)
                     built in integration for RDS, Redshift, and documentDB
 }
+
+PRICING, BILLING, AND GOVERNANCE INTRODUCTION, 16% OF EXAM
+
+PRICING
+{
+    3 drivers of cost:compute, storage, and outbound data transfer
+        compute: hourly from launch to termination
+        storage: data you store in the cloud
+        outbound data transfer: data in flight moving between systems
+
+    3 free offer types:
+        12 months free: pay standard rates after first 12 months from data you activated account,
+        always free: offers do not expire and are free to all aws customers,
+        trials: short term free trials starting from when you activate trial
+
+    lambda and ec2 pricing discussed above
+
+    RDS pricing: 
+        running clock hours, type of database, storage, database count, api requests, deployment type, data transfer
+
+    TCO: total cost of ownership, financial estimate of both the direct and inderect costs of AWS,
+        reduce by: minimizing capital expenditures, utilize reserved instances, right size your resources,
+            aws pricing calculator helps you estimate TCO, common use case is checking prices per region
+
+    application discovery service: helps you plan migration projects to the AWS cloud, used to estimate TCO
+
+    AWS price list API: helps you query the price of AWS services
+                        receive price alerts when prices change
+}
+
+UNDERSTANDING BILLING SERVICES
+{
+    Budgets: allows you to set custom budgets that alert you when your costs or usage exceed your budget amount
+
+    cost budgets: plan how much you want to spend on a service
+    usage budgets: plan on how much you want to use on one or more services
+    reservation budgets: set RIs or savings plan utilization or coverage targets
+
+    Cost and Usage report: contains the most comprehensive set of cost and usage data
+
+    Cost explorer: helps you visualize the forecast your costs and usage over time
+
+    tags: general tags can help you track spending
+}
+
+EXPLORING GOVERNANCE SERVICES, help you maintain cost, compliance, and security across your AWS accounts
+{
+    Organizations: allows you to centrally manage multiple AWS accounts under one umbrella
+            root account is called master payer
+            SCPs: service control policies, help you enforce permissions you want everyone in org to follow
+            OUs: organization units, grouping of AWS accounts that are similar 
+            member accounts: are the standard, individual aws accounts that contain your aws resources
+
+        benefits:
+            consolidated billing, cost savings, account governance
+
+    Control tower: helps you ensure your accounts conform to company wide policies
+
+    Systems Manager: gives you visibility and control over your aws resources
+                    automate operational tasks on your resources
+
+    Trusted Advisor: provides real time guidance to help you provision your resources following aws best practices
+                    ex checks permissions to see if there is public access, iam checks, rds public snapshots,
+                    service usage, exposed access keys, checks for cloudfront optimization
+    
+    License manager: helps you manage software licenses
+    certficate manager: helps you provision and manage SSL/TLS certificates
+}
+
+MANAGEMENT SERVICES: services that help you migrate to and build faster in cloud
+{
+    Managed services: helps you efficiently operate your aws infrastructure
+                    reduces operational risks and overhead
+    
+    Professional services: helps on premise enterprise customers move to a cloud based operating model
+                        proposes, architects, and implements solutions
+
+    APN: aws partner network, global community of approved partners that offer software solutions and 
+        consulting services for AWS
+
+    Marketplace: digital catalog of prebuilt solutions you can purchase or license.  You may also use it to sell
+                solutions to others
+
+    Personal Health Dashboard: alerts you to events that might impact your aws environment by providing 
+                            feedback tailored to your specific environment
+}
+
+SUPPORT PLANS
+{
+    Basic: included for free for all AWS accounts
+            does not have access to technical support cases, 24/7 customer service via email
+
+    Developer: starts at 29$ a month and is recommended for testing and development
+                start of guaranteed response times,
+
+    Business: starts at 100$ a month and is recommended for production workloads
+             unlimited contacts, cases and a full set of trusted advisor checks
+             24/7 access cloud engineers via email phone or chat, better response times
+
+    enterprise: starts at 15,000 a month and is recommended for business or mission critical production 
+                workloads
+                a lot including technical account manager and concierge response team, quick response times
+
+    support cases: account and billing, service limit increases, technical support
+}
+
+
 
 
