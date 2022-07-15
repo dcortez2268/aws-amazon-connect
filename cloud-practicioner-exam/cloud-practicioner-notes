@@ -46,12 +46,12 @@ operating expenses, OpEx: funds used to run day to day operations,
 
 3 cloud computing models:
 IAAS, Infrastructure as a Service: model closest to you managing physical servers.  The cloud provider provides 
-                                  servers, however you manage virtual machine, os, runtime, applications, and data, as well.
+                                  servers, however you manage virtual machine, os, runtime, applications, and data and access, as well.
     use case: renting out fundemental building blocks,
     ex: web hosting      
 
 PAAS, Platform as a Service: The cloud provider manages servers as well as os, virtual machine, and runtime,  
-                            you manage applications and data.
+                            you manage applications, and data and access.
     use case: used by developers, develop software using web based tools without worrying about underlying architecture
 
 SAAS, Software as a Service: The cloud provider manages all aspects of hardware, software, and application,
