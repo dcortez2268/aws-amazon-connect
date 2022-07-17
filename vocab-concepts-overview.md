@@ -1,4 +1,4 @@
-EVERYDAY REVIEW:
+VOCAB REVIEW:
 data dip: retrieve information about a contact
 
 CTR: contact trace record, data about contacts is captured in ctrs, entails recordings or metrics about contact

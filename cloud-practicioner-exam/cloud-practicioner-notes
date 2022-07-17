@@ -181,7 +181,7 @@ AWS S3: object storage service for the cloud that is highly available,
     security: you can set security at the bucket level or individual object level using ACLs, bucket policies, 
                 or access point policies,
 
-different storage classes, or ways to store your data:
+different storage classes or ways to store your data:
  s3 standard: recommended for frequently accessed data, general purpose, data stored across multiple AZs, 
  s3 intelligent tiering: recommended for data with changing access patterns, automatically moves data to most 
                         cost effective storage class, data stored across multiple AZs, 
