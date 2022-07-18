@@ -2,19 +2,21 @@ VOCAB REVIEW:
 
 data dip: retrieve information about a contact
 
-CTR: contact trace record, data about contacts is captured in ctrs, entails recordings or metrics about contact
+CTR: contact trace record, ctrs help capture data about a contact, entails recordings or metrics about contact
 
 data centers: server farms
 
 data warehouse: a data storage solution that aggregates massive amounts of historical data from disparate sources
 
-virtualization: lets you divide hardware resources on a single physical server into smaller units, called virtual machines
+virtualization: lets you divide hardware resources on a single physical server into smaller units, called virtual
+                 machines
 
 contact centers: call centers,
 
-amazon connect: omni channel cloud contact center that helps companies provide superior customer service at lower cost,
-    ease of customization is a huge benefit for amazon connect, 
-    allows for incredible customer experiences because we can customize them to fit business needs.  This power derives from lambda, and other crm integrations. 
+amazon connect: omni channel cloud contact center that helps companies provide superior customer service at lower
+             cost, ease of customization is a huge benefit for amazon connect, allows for incredible customer 
+             experiences because we can customize them to fit business needs.  This power derives from lambda, 
+             and other crm integrations. 
 
 omni channel contact centers: various channels within single stream provide access to consolidated data, agent 
 can easily switch between channels, and allows customers to switch from one channel to another
@@ -23,19 +25,27 @@ voice channel: traditional inbound or outbound voice communications
 chat: proactive or reactive chat sessions through a web site or mobile app
 tasks: allow agents to create and complete tasks in an automated process
 
-cloud computing: is the delivery of computing services over the internet by using a pay as you go pricing model.  You are billed only for what you use which helps you: lower your operating costs, run your infrastructure more efficiently, scale as your business needs change.  You are basically renting computing power and storage from someone else's datacenter.  
+cloud computing: is the delivery of computing services over the internet by using a pay as you go pricing model.
+You are billed only for what you use which helps you lower your operating costs, run your infrastructure more 
+efficiently, scale as your business needs change.  You are basically renting computing power and storage from 
+someone else's datacenter.  
 
-containers: provide you with a standard way to package your application's code and dependencies into a single object.  Also used for processes and workflows in which there are essential requirements for security, reliability, and scalability.  
+containers: provide you with a standard way to package your application's code and dependencies into a single 
+object.  Also used for processes and workflows in which there are essential requirements for security, reliability, and scalability.  
 
 CCP, contact control panel: customizable interface that agents use to engage with contacts across multiple 
-                        channels
+channels
 
 contact flows: features that let you define the customer experience within the contact center from start to 
-finish, you can play prompts, get input data, invoke lambda functions, and integrate lex bot, and so much more because they can integrate with CRMs and databases to dynamically adapt the experience based on customer or history 
+finish, you can play prompts, get input data, invoke lambda functions, and integrate lex bot, and so much more
+because they can integrate with CRMs and databases to dynamically adapt the experience based on customer or 
+history 
 
-routing profile: links a collection of queues to agents and determines the contacts that an agent receives and routing priority
+routing profile: links a collection of queues to agents and determines the contacts that an agent receives and 
+routing priority
 
-consider when creating connect instance: customers' location, agents' location, regulatory or compliance data requirements,
+consider when creating connect instance: customers' location, agents' location, regulatory or compliance data 
+requirements,
 
 queue: waiting area that holds contacts to be answered by agents
 
@@ -43,27 +53,36 @@ prompts: audio files played in call flows
 
 contact: interaction with a customer in your contact center, can be voice, chat, task
 
-contact attributes: refer to key value pairs that contain data about a contact, they allow you to pass data between amazon connect and other services
+contact attributes: refer to key value pairs that contain data about a contact, they allow you to pass data 
+between amazon connect and other services
 
 quick connects: a list of destinations for common transfers, can be external number, agent, or queue
 
 agent: employees or customer service representative taking calls
 
-IVR, interactive voice responses: used to assist contacts navigating through the existing queues to reach an agent that is able to assist them
+IVR, interactive voice responses: used to assist contacts navigating through the existing queues to reach an 
+agent that is able to assist them
 
-cases: represents a customers issue.  It is created to record the customers issue, the steps and interactions taken to resolve the customer's issue, and the outcome.
+cases: represents a customers issue.  Cases help record the customers issue, the steps and interactions taken 
+to resolve the customer's issue, and the outcome.
 
 lex: helps you build conversational interfaces via recognizing speech and understanding language,
         build highly engaging chatbots, IVR systems with integration with lambda,
 
-CUSTOMER PROFILES: has all the information agents need during customer interactions in a single place. agents can quickly confirm the customer's identity and determine the reason for the call or chat.
+CUSTOMER PROFILES: has all the information agents need during customer interactions in a single place. agents 
+can quickly confirm the customer's identity and determine the reason for the call or chat.
 
-effective rate for employees: focusing on increasing productivity rather than quantity of employees to negate need for more workers and also to increase wages to increase employee retainment rate
+effective rate for employees: focusing on increasing productivity rather than quantity of employees to negate 
+need for more workers and also to increase wages to increase employee retainment rate
 
-Serverless computing: means that your code runs on servers without needing to provision or manage the 
-                    servers. the cloud service provider automatically provisions, scales, and manages the 
-                    infrastructure required to run code.  These architectures are highly scalable and event driven.  They use resources only when a specific function or trigger occurs.  
+Serverless computing: means that your code runs on servers without needing to provision or manage the servers. 
+the cloud service provider automatically provisions, scales, and manages the infrastructure required to run 
+code.  These architectures are highly scalable and event driven.  They use resources only when a specific 
+function or trigger occurs.  
 
+Contact Lens: enables you to analyze conversations between customer and agents, by using speech transcription,
+natural language processing, and intelligent search capabilities. It performs sentiment analysis, detects issues,
+and enables you to automatically categorize contacts.
 
 
 WEEK 1:
@@ -266,8 +285,8 @@ CASES
 {
     cases: represents a customers issue.  It is created to record the customers issue, the steps and interactions taken to resolve the customer's issue, and the outcome.  
 
-    case fields: building blocks for case templates,
-                two types: system case fields and custom case fields
+    case fields: building blocks for case templates
+              two types, system case fields and custom case fields
 
     case templates: cases are always created based on a template, they are forms that ensure agents collect and 
                     reference the right information for different types of customer issues
