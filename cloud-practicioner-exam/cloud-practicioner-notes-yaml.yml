@@ -6,25 +6,28 @@ vertical scaling: upgrading an ec2 instance by adding more power(cpu, ram) to an
 why are auditing, monitoring, and logging important: they help you gain insight into how well your systems are 
 performing and help you proactively find and resolve errors
 
-elasticity: you can provision only what you need, and then grow and shrink based on demand.
-
 agility: all the services you have access to help you innovate faster, giving you speed to market. 
 
 durability: this means your data will remain intact without corruption.
 
+elasticity: you can provision only what you need, and then grow and shrink based on demand.
+
 high availability: highly available systems are designed to operate continuously without failure for a long time and provide quick access to data.  these systems avoid loss of service by reducing or managing failures.
+
+scalability: systems are expected to grow over time with no drop in performance
 
 cloud features:
     high availability, unlimited capacity, on demand scalability, elasticity, cost savings, agility
 
 six advantages to cloud computing:
-go global in minutes,
 stop spending money running and maintaining data centers,
 benefit from massive economies of scale, volume discounts are passed on to you,
-increased agility, 
-elasticity helps you to stop guessing capacity,
 trade capital expenses for variable expenses, you pay for what you use instead of making upfront investments
 
+go global in minutes,
+increased agility, 
+
+elasticity helps you to stop guessing capacity,
 
 
 intro:
@@ -176,18 +179,18 @@ AWS Batch: allows you to process large workloads in smaller chunks, or batches,
 STORAGE SERVICES:
 ****************
 
-AWS S3: object storage service for the cloud that is highly available,
+AWS S3: object storage service for the cloud that is highly available and highly durable ,
         objects, or files, are stored in buckets, or directories,
+        
         essentially unlimited storage space,
         objects can be public or private,
         you can upload objects via the console, CLI, or programmatically via SDKs,
         provides object versioning,
         s3 access logs track access to buckets and objects,
         bucket names must be globally unique
-        99.9999999% durability and 99.9999999% availability
 
-    security: you can set security at the bucket level or individual object level using ACLs, bucket policies, 
-    or access point policies,
+    security: you can set security at the bucket level using bucket policies or individual object level using 
+    ACLs, or access point policies,
 
 different storage classes or ways to store your data:
  s3 standard: recommended for frequently accessed data, general purpose, data stored across multiple AZs, 
@@ -197,8 +200,8 @@ different storage classes or ways to store your data:
  cheaper than s3 standard, stored across multiple AZs
  s3 one zone-infrequent access: recommended for data accessed less frequently that requires rapid access,
  but availability and durability not essential because stored in only one AZ, costs 20% less than standard IA
- s3 glacier flexible retrieval: recommended for long term backups, cheaper storage options, data retrieval takes longer, stored 
- across multiple AZs, 
+ s3 glacier flexible retrieval: recommended for long term backups, cheaper storage options, data retrieval takes
+ longer, stored  cross multiple AZs, 
  s3 glacier deep archive: recommended for long term backups accessed once or twice a year or retaining data for 
  regulatory compliance requirements, cheapest, data retrieval takes longer than s3 glacier, stored across 
  multiple AZs, 
@@ -273,7 +276,7 @@ spans AZs in a region
             can be private or public,
             default settings consist of only being able to communicate with other subnets from same vpc
 
-communication from vpc to internet: public subnet => NACL => ROUTER/router table => internet gateway => internet
+communication from vpc to internet: public subnet => NACL => ROUTER/route table => internet gateway => internet
 
 Network ACL: access control lists ensure the proper traffic is allowed into the subnet
 Router and route table: defines where network traffic is routed
@@ -327,7 +330,6 @@ DynamoDB: fully managed NoSQL key value and document database,
 scales automatically to massive workloads with fast performance
 
 DocumentDB: fully managed document database that supports MongoDB,
-document database,
 
 ElastiCasche: fully managed in memory datastore compatible with Redis or Memcached
 if you're regularly reading from intensive database, reduces load,
@@ -374,7 +376,7 @@ pay per query,
 serverless
 
 Glue: ETL service that helps prepare your data for analytics
-ETL service, extract, transform, then loads data
+ETL service = extract, transform, then loads data
 
 Kinesis: allows you to analyze data and video streams in real time,
 supports video, audio, application logs, website clickstreams, and IOT,
@@ -544,7 +546,7 @@ you define who has access and what they can do
     users: entities you create in IAM to represent the person or application needing to access your aws resources
     IAM role: roles define access permissions via policies and are temporarily assumed by an IAM user, 
     IAM policy: JSON document that allows or denies permissions for IAM users, groups, and roles
-    principle of least privilege: involves giving a user the minum access required to get the job done
+    principle of least privilege: involves giving a user the minimum access required to get the job done
     groups: collection of IAM users that helps you apply common access controls to all group members
     access is assigned using policies and roles
 
@@ -634,9 +636,6 @@ receive price alerts when prices change
 ********************************
 UNDERSTANDING BILLING SERVICES :
 ********************************
-cost budgets: plan how much you want to spend on a service
-usage budgets: plan on how much you want to use on one or more services
-reservation budgets: set RIs or savings plan utilization or coverage targets
 
 Budgets: allows you to set custom budgets that alert you when your costs or usage exceed your budget amount
 
@@ -705,17 +704,22 @@ Developer: starts at 29$ a month and is recommended for testing and development
 start of guaranteed response times,
 Customers on the Developer Support plan can submit support cases for account and billing questions, 
 service limit increases, and technical support cases via email only.
+response times: 24 hours, 12 hours, 
 
 Business: starts at 100$ a month and is recommended for production workloads
-unlimited contacts, cases and a full set of trusted advisor checks
+unlimited contacts, cases, and a full set of trusted advisor checks
 24/7 access cloud engineers via email phone or chat, better response times
+response times: 24 hours, 12 hours, 4 hours, 1 hour
 
 enterprise: starts at 15,000 a month and is recommended for business or mission critical production 
 workloads
-a lot including technical account manager and concierge response team, quick response times
+unlimited contacts, unlimited cases, technical account manager (TAM), concierce support team, infrastructure
+event management, and full set of trusted advisor checks
 While customers on the Enterprise Support plan have access to TAMs, TAMs typically provide proactive 
 best-practice guidance and assistance with architecting, developing, and running AWS solutions.
 Use the AWS Support API to programmatically open a case with AWS Support.
+Infrastrucure event management: helps provide support for planning and running business critical
+events
 
 
 
