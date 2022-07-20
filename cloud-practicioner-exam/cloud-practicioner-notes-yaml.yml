@@ -12,7 +12,8 @@ durability: this means your data will remain intact without corruption.
 
 elasticity: you can provision only what you need, and then grow and shrink based on demand.
 
-high availability: highly available systems are designed to operate continuously without failure for a long time and provide quick access to data.  these systems avoid loss of service by reducing or managing failures.
+high availability: highly available systems are designed to operate continuously without failure for a long time 
+and provide quick access to data.  these systems avoid loss of service by reducing or managing failures.
 
 scalability: systems are expected to grow over time with no drop in performance
 
@@ -150,9 +151,9 @@ COMPUTE SERVICES:
 
 AWS LAMBDA: serverless compute service that lets you run code without managing servers
         features:
-        write functions using many popular languages, via your favorite dev environment or console
         scales automatically,
         serverless, meaning you don't worry about managing servers like with EC2,
+        write functions using many popular languages, via your favorite dev environment or console
         use cases:
         for quick processes(<15 min timeout), ex real time file processing,
         lambda can execute your code in response to events,
@@ -201,7 +202,7 @@ different storage classes or ways to store your data:
  s3 one zone-infrequent access: recommended for data accessed less frequently that requires rapid access,
  but availability and durability not essential because stored in only one AZ, costs 20% less than standard IA
  s3 glacier flexible retrieval: recommended for long term backups, cheaper storage options, data retrieval takes
- longer, stored  cross multiple AZs, 
+ longer, stored across multiple AZs, 
  s3 glacier deep archive: recommended for long term backups accessed once or twice a year or retaining data for 
  regulatory compliance requirements, cheapest, data retrieval takes longer than s3 glacier, stored across 
  multiple AZs, 
@@ -266,7 +267,7 @@ customers around the world can upload to a central bucket
 NETWORKING SERVICES:
 *******************
     
-VPC: virtual private cloud, allows you to create a secure private network in the AWS cloud where you launch 
+VPC: virtual private cloud, allows you to create a secure private network in the AWS cloud where you protect 
 your resources,
 isolate, launch, and protect resources inside the VPC,
 spans AZs in a region
@@ -294,7 +295,7 @@ additional networking services:
         use cases:
         large datasets that you need to transfer to AWS,
         transfer internal data directly to AWS, bypassing your ISP,
-        hybrid cloud model
+        enables hybrid cloud model
 
     AWS VPN: site to site VPN creates a secure connection between your internal networks and your AWS VPCs,
     similar to direct connect but data travels over the public internet,
@@ -333,7 +334,7 @@ DocumentDB: fully managed document database that supports MongoDB,
 
 ElastiCasche: fully managed in memory datastore compatible with Redis or Memcached
 if you're regularly reading from intensive database, reduces load,
-improves performance and low latency
+improves performance and low ladtency
 
 Neptune: fully managed graph database that supports highly connected datasets
 good for highly connected datasets like social media networks
@@ -404,7 +405,7 @@ Polly: turns text into speech
 several voices across many languages in natural speech, can create custom voice,
 
 SageMaker: helps you build, train, and deploy machine learning models quickly
-provides deep learning AMIs
+, provides deep learning AMIs
     use cases: 
     recommendation engines
 
@@ -442,7 +443,8 @@ CodePipeline: integrates with codecommit, codebuild, and codedeploy to implement
 automates the software release process, quickly deliver new features and updates,
     
 X-ray: helps you debug production applications
-allows you to map requests made to your RDS database
+AWS X-Ray provides an end-to-end view of requests as they travel through your application, and shows a map of your 
+application’s underlying components.
 
 CodeStar: helps developers collaboratively work on development projects
 contains issue tracking dashboard,
@@ -504,8 +506,10 @@ WorkSpaces: allows you to host virtual desktops in the cloud
 virtualize windows or linux desktops
 enables employees to work from home
 
-Amazon Connect: cloud contact center service
-provides superior customer service functionality and improves productivity of help desk agents
+Amazon Connect: omni channel cloud contact center that helps companies provide superior customer service at lower
+cost, 
+allows for incredible customer experiences because we can customize them to fit business needs.  
+This power derives from lambda, and other crm integrations. 
 
 
 *************************
