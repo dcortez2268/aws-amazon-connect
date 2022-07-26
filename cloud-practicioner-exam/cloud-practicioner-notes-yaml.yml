@@ -123,6 +123,9 @@ most common way to connect to linux ec2 instances is via SSH:
 first, generate a key pair,
 second, connect via ssh, your ssh client uses private key and the ec2 instance uses public key
 
+security groups: A security group acts as a virtual firewall for your instance to protect your EC2 instance by 
+controlling inbound and outbound traffic.
+
 pricing models: on demand, spot, reserved instances, dedicated hosts, savings plans
 
     on demand: a fixed price in which you are billed down to the second based on the instance type & no contract
@@ -181,7 +184,7 @@ STORAGE SERVICES:
 ****************
 
 AWS S3: object storage service for the cloud that is highly available and highly durable ,
-        objects, or files, are stored in buckets, or directories,
+        objects are stored in buckets, 
         
         essentially unlimited storage space,
         objects can be public or private,
@@ -408,7 +411,7 @@ Polly: turns text into speech
 several voices across many languages in natural speech, can create custom voice,
 
 SageMaker: helps you build, train, and deploy machine learning models quickly
-, provides deep learning AMIs
+ provides deep learning AMIs
     use cases: 
     recommendation engines
 
@@ -417,7 +420,6 @@ Translate: provides language translation, translates many languages in real time
 Lex: helps you build conversational interfaces 
 recognize speech and understands language,
 build highly engaging chatbots, IVR systems with integration with lambda,
-powers amazon alexa
     use cases:
     integrate voice into a device,
     power chatbots
@@ -446,8 +448,8 @@ CodePipeline: integrates with codecommit, codebuild, and codedeploy to implement
 automates the software release process, quickly deliver new features and updates,
     
 X-ray: helps you debug production applications
-AWS X-Ray provides an end-to-end view of requests as they travel through your application, and shows a map of your 
-application’s underlying components.
+AWS X-Ray provides an end-to-end view of requests as they travel through your application, and shows a map of 
+your application’s underlying components.
 
 CodeStar: helps developers collaboratively work on development projects
 contains issue tracking dashboard,
@@ -480,7 +482,7 @@ multiple components, or producers, can add messages to the queue,
 messages are processed in an asynchronous manner
 
 SNS: simple notification service, helps you send emails and text messages from your applications
-publish messages to a topic, 
+publish messages to a topic, which is an endpoint 
 subscribers receive messages,
 can work with cloudwatch to send notifications based on metrics
 
@@ -553,9 +555,12 @@ you define who has access and what they can do
     users: entities you create in IAM to represent the person or application needing to access your aws resources
     IAM role: roles define access permissions via policies and are temporarily assumed by an IAM user, 
     IAM policy: JSON document that allows or denies permissions for IAM users, groups, and roles
-    principle of least privilege: involves giving a user the minimum access required to get the job done
     groups: collection of IAM users that helps you apply common access controls to all group members
     access is assigned using policies and roles
+    principle of least privilege: involves giving a user the minimum access required to get the job done
+
+resource groups: You can use resource groups to organize your AWS resources. Resource groups make it easier to 
+manage and automate tasks on large numbers of resources at one time. 
 
 tasks that require root credentials: change account settings, restore IAM user permissions, close account
 
@@ -583,7 +588,7 @@ Config: allows you to assess, audit, and evaluate the configurations of your res
 notifications via SNS of every configuration change, and delivers history file to s3
 
 GuardDuty: intelligent threat detection system that uncovers unauthorized behavior
-uses machine learning and has built in detection for ec2, s3, api calls, and IAM
+uses machine learning and has built in detection for ec2, cloudtrail, api calls, and IAM
 
 Inspector: only works with ec2 instances to uncover and report vulnerabilities
 
@@ -722,11 +727,10 @@ enterprise: starts at 15,000 a month and is recommended for business or mission 
 workloads
 unlimited contacts, cases, technical account manager (TAM), concierce support team, infrastructure
 event management, and full set of trusted advisor checks
-While customers on the Enterprise Support plan have access to TAMs, TAMs typically provide proactive 
-best-practice guidance and assistance with architecting, developing, and running AWS solutions.
-Use the AWS Support API to programmatically open a case with AWS Support.
+TAMs: typically provide proactive best-practice guidance and assistance with architecting, developing, and running AWS solutions.
 Infrastrucure event management: helps provide support for planning and running business critical
 events
+Use the AWS Support API to programmatically open a case with AWS Support.
 
 
 
