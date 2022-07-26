@@ -205,7 +205,7 @@ different storage classes or ways to store your data:
  longer, stored across multiple AZs, 
  s3 glacier deep archive: recommended for long term backups accessed once or twice a year or retaining data for 
  regulatory compliance requirements, cheapest, data retrieval takes longer than s3 glacier, stored across 
- multiple AZs, 
+ multiple AZs, takes 12 hours to retrieve data
  s3 outposts: recommended for data that needs to be kept local, provides object storage on premises
 
         s3 use cases:
@@ -282,6 +282,9 @@ communication from vpc to internet: public subnet => NACL => ROUTER/route table 
 Network ACL: access control lists ensure the proper traffic is allowed into the subnet
 Router and route table: defines where network traffic is routed
 internet gateway: allows public traffic to the internet from a VPC
+
+missed this on test: An EC2 instance in your VPC needs a public IP address for the internet gateway to route its 
+traffic to the internet.
     
 VPC peering: facilitates the transfer of data in a secure manner between 2 VPCs
 
@@ -334,7 +337,7 @@ DocumentDB: fully managed document database that supports MongoDB,
 
 ElastiCasche: fully managed in memory datastore compatible with Redis or Memcached
 if you're regularly reading from intensive database, reduces load,
-improves performance and low ladtency
+improves performance and low latency
 
 Neptune: fully managed graph database that supports highly connected datasets
 good for highly connected datasets like social media networks
@@ -645,7 +648,7 @@ Budgets: allows you to set custom budgets that alert you when your costs or usag
 
 Cost and Usage report: contains the most comprehensive set of cost and usage data
 
-Cost explorer: helps you visualize the forecast your costs and usage over time
+Cost explorer: helps you visualize the forecast of your costs and usage over time
 
 tags: general tags can help you track spending
 
@@ -717,7 +720,7 @@ response times: 24 hours, 12 hours, 4 hours, 1 hour
 
 enterprise: starts at 15,000 a month and is recommended for business or mission critical production 
 workloads
-unlimited contacts, unlimited cases, technical account manager (TAM), concierce support team, infrastructure
+unlimited contacts, cases, technical account manager (TAM), concierce support team, infrastructure
 event management, and full set of trusted advisor checks
 While customers on the Enterprise Support plan have access to TAMs, TAMs typically provide proactive 
 best-practice guidance and assistance with architecting, developing, and running AWS solutions.

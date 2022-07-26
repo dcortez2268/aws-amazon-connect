@@ -9,14 +9,14 @@ data centers: server farms
 data warehouse: a data storage solution that aggregates massive amounts of historical data from disparate sources
 
 virtualization: lets you divide hardware resources on a single physical server into smaller units, called virtual
-                 machines
+machines
 
 contact centers: call centers,
 
 amazon connect: omni channel cloud contact center that helps companies provide superior customer service at lower
-             cost, ease of customization is a huge benefit for amazon connect, allows for incredible customer 
-             experiences because we can customize them to fit business needs.  This power derives from lambda, 
-             and other crm integrations. 
+cost, 
+allows for incredible customer experiences because we can customize them to fit business needs.  
+This power derives from lambda, and other crm integrations. 
 
 omni channel contact centers: various channels within single stream provide access to consolidated data, agent 
 can easily switch between channels, and allows customers to switch from one channel to another
@@ -27,11 +27,12 @@ tasks: allow agents to create and complete tasks in an automated process
 
 cloud computing: is the delivery of computing services over the internet by using a pay as you go pricing model.
 You are billed only for what you use which helps you lower your operating costs, run your infrastructure more 
-efficiently, scale as your business needs change.  You are basically renting computing power and storage from 
+efficiently, and scale as your business needs change.  You are basically renting computing power and storage from 
 someone else's datacenter.  
 
 containers: provide you with a standard way to package your application's code and dependencies into a single 
-object.  Also used for processes and workflows in which there are essential requirements for security, reliability, and scalability.  
+object.  Also used for processes and workflows in which there are essential requirements for security, 
+reliability, and scalability.  
 
 CCP, contact control panel: customizable interface that agents use to engage with contacts across multiple 
 channels
@@ -58,7 +59,7 @@ between amazon connect and other services
 
 quick connects: a list of destinations for common transfers, can be external number, agent, or queue
 
-agent: employees or customer service representative taking calls
+agent: employee or customer service representative taking calls
 
 IVR, interactive voice responses: used to assist contacts navigating through the existing queues to reach an 
 agent that is able to assist them
