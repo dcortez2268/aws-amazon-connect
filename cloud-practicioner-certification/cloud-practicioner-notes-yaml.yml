@@ -727,10 +727,18 @@ enterprise: starts at 15,000 a month and is recommended for business or mission 
 workloads
 unlimited contacts, cases, technical account manager (TAM), concierce support team, infrastructure
 event management, and full set of trusted advisor checks
-TAMs: typically provide proactive best-practice guidance and assistance with architecting, developing, and running AWS solutions.
+TAMs: typically provide proactive best-practice guidance and assistance with architecting, developing, and 
+running AWS solutions.
 Infrastrucure event management: helps provide support for planning and running business critical
 events
 Use the AWS Support API to programmatically open a case with AWS Support.
+
+concepts: best practices: lambda
+architectural guidance: operational excellence
+forecasting, capacity, planning, and scheduling: what is workforce management
+compliance validation: best practices for PII compliance
+
+
 
 
 
