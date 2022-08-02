@@ -13,7 +13,7 @@ disparate sources
 virtualization: lets you divide hardware resources on a single physical server into smaller units,
 called virtual machines
 
-contact centers: call centers,
+contact centers: call centers
 
 amazon connect: omni channel cloud contact center that helps companies provide superior customer 
 service at lower cost, 
@@ -39,10 +39,10 @@ reliability, and scalability.
 CCP, contact control panel: customizable interface that agents use to engage with contacts across
 multiple channels
 
-contact flows: features that let you define the customer experience within the contact center from start to 
-finish, you can play prompts, get input data, invoke lambda functions, and integrate lex bot, and
-so much more because they can integrate with CRMs and databases to dynamically adapt the 
-experience based on customer or history 
+contact flows: features that let you define the customer experience within the contact center 
+from start to finish, you can play prompts, get input data, invoke lambda functions, and 
+integrate lex bot, and so much more because they can integrate with CRMs and databases to 
+dynamically adapt the experience based on customer or history 
 
 routing profile: links a collection of queues to agents and determines the contacts that an agent
 receives and routing priority
@@ -87,6 +87,9 @@ They use resources only when a specific function or trigger occurs.
 Contact Lens: enables you to analyze conversations between customer and agents, by using speech 
 transcription, natural language processing, and intelligent search capabilities. It performs 
 sentiment analysis, detects issues, and enables you to automatically categorize contacts.
+
+CRM: customer relationship management system, tool that manages all of your company's interactions
+and relationships with customers.
 
 
 WEEK 1:

@@ -31,12 +31,8 @@ increased agility,
 elasticity helps you to stop guessing capacity,
 
 region: a physical geographic location that is a collection of availability zones
-each region is fully independent from other regions,
-most resources are tied to a specific region
 
 AZ, availability zone: single data center or a collection of data centers within a region
-availability zones are physically seperated but connected through low latency links
-where you deploy your applications
 
 EC2, Elastic compute cloud: allows you to rent and manage virtual servers in the cloud elastically,
 ec2 instances are the virtual servers running on the physical servers,
@@ -58,8 +54,8 @@ you only manage data and access only.
 use case: using a complete application, on demand, that someone offers to users,
 ex: email providers
 
-AWS S3: object storage service for the cloud that is highly available and highly durable ,
-        objects are stored in buckets, 
+S3: object storage service for the cloud that is highly available and highly durable , objects 
+are stored in buckets, 
 
 AWS LAMBDA: serverless compute service that lets you run code without managing servers
         features:
@@ -81,14 +77,14 @@ scales automatically to massive workloads with fast performance
 
 DocumentDB: fully managed document database that supports MongoDB,
 
-VPC: virtual private cloud, allows you to create a secure private network in the AWS cloud where you protect 
-your resources,
+VPC: virtual private cloud, allows you to create a secure private network in the AWS cloud where 
+you protect your resources,
 
 DIRECT CONNECT: dedicated physical network connection from your on premises data center to AWS, supports 
 hybrid model, data travels over private physical network connection
 
-AWS VPN: site to site VPN creates a secure connection between your internal networks and your AWS VPCs,
-similar to direct connect but data travels over the public internet,
+AWS VPN: site to site VPN creates a secure connection between your internal networks and your AWS 
+VPCs, similar to direct connect but data travels over the public internet,
 
 API Gateway: allows you to build and manage APIs
 
@@ -102,7 +98,7 @@ SQS: simple queue service, message queieng service that helps you to build loose
 allows component to component communication using messages,
 
 SNS: simple notification service, helps you send emails and text messages from your applications
-publish messages to a topic, which is an endpoint 
+publish messages to a topic, which are endpoints
 
 Cloudwatch: collection of services that help you monitor and observe your cloud resources
 collects metrics, logs, and events, and sets alarms
@@ -112,7 +108,8 @@ CloudTrail: tracks user activity and API calls within your account
 
 IAM: allows you to control access to your AWS services and resources
 you define who has access and what they can do
-users: entities you create in IAM to represent the person or application needing to access your aws resources
+users: entities you create in IAM to represent the person or application needing to access your 
+aws resources
 IAM role: roles define access permissions via policies and are temporarily assumed by an IAM user, 
 IAM policy: JSON document that allows or denies permissions for IAM users, groups, and roles
 groups: collection of IAM users that helps you apply common access controls to all group members
