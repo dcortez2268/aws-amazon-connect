@@ -87,6 +87,13 @@ They use resources only when a specific function or trigger occurs.
 Contact Lens: enables you to analyze conversations between customer and agents, by using speech 
 transcription, natural language processing, and intelligent search capabilities. It performs 
 sentiment analysis, detects issues, and enables you to automatically categorize contacts.
+TWO TYPES OF ANALYTICS: post call and real time analytics
+Use cases:
+generate alerts on real time customer sentiment drops across all calls
+aggregate and report on reoccuring issues and topics
+measure the impact of latest marketing campaging by tecting how many customers referenced in a call
+customize agent compliance standards for eachr region and lines of business and enroll agents in
+training where required
 
 CRM: customer relationship management system, tool that manages all of your company's interactions
 and relationships with customers.
