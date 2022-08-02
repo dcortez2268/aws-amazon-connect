@@ -6,4 +6,6 @@
 * wk3: costs in contact center, intro amazon connect, agents, network config
 * wk4: batch processing solution, building ivr feedback system
 * wk5: JSON, Okta, Chat Widget, Lex Bot, holiday emergency messaging system project
-* wk6: cases, 
+* wk6: cases, crm integrations
+* wk7: contact lens, call recordings
+* wk8-wk10: final project, live demo
