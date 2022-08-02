@@ -30,6 +30,104 @@ increased agility,
 
 elasticity helps you to stop guessing capacity,
 
+region: a physical geographic location that is a collection of availability zones
+each region is fully independent from other regions,
+most resources are tied to a specific region
+
+AZ, availability zone: single data center or a collection of data centers within a region
+availability zones are physically seperated but connected through low latency links
+where you deploy your applications
+
+EC2, Elastic compute cloud: allows you to rent and manage virtual servers in the cloud elastically,
+ec2 instances are the virtual servers running on the physical servers,
+instances are not considered serverless because they are located on actual servers
+
+3 cloud computing models:
+IAAS, Infrastructure as a Service: model closest to you managing physical servers.  The cloud provider provides
+servers, however you manage virtual machine, os, runtime, applications, and data and access, as well.
+use case: renting out fundemental building blocks,
+ex: web hosting      
+
+PAAS, Platform as a Service: The cloud provider manages servers as well as os, virtual machine, and runtime,  
+you manage applications, and data and access.
+use case: used by developers, develop software using web based tools without worrying about underlying 
+architecture
+
+SAAS, Software as a Service: The cloud provider manages all aspects of hardware, software, and application,
+you only manage data and access only.
+use case: using a complete application, on demand, that someone offers to users,
+ex: email providers
+
+AWS S3: object storage service for the cloud that is highly available and highly durable ,
+        objects are stored in buckets, 
+
+AWS LAMBDA: serverless compute service that lets you run code without managing servers
+        features:
+        scales automatically,
+        serverless, meaning you don't worry about managing servers like with EC2,
+        write functions using many popular languages,
+
+Cloudfront: a CDN that delivers data and applications globally with low latency,
+speeds up delivery of static and dynamic web content by using edge locations to cache content
+    use cases: often used with s3 to deploy content globally,
+    prevent attacts like DDos,
+    IP address blocking
+
+RDS: service that launches and manages relational databases,
+supports popular database engines, aurora, postreSQL, MySQL, MariaDB, Oracle, and SQL server
+
+DynamoDB: fully managed NoSQL key value and document database,
+scales automatically to massive workloads with fast performance
+
+DocumentDB: fully managed document database that supports MongoDB,
+
+VPC: virtual private cloud, allows you to create a secure private network in the AWS cloud where you protect 
+your resources,
+
+DIRECT CONNECT: dedicated physical network connection from your on premises data center to AWS, supports 
+hybrid model, data travels over private physical network connection
+
+AWS VPN: site to site VPN creates a secure connection between your internal networks and your AWS VPCs,
+similar to direct connect but data travels over the public internet,
+
+API Gateway: allows you to build and manage APIs
+
+Polly: turns text into speech
+several voices across many languages in natural speech, can create custom voice,
+
+CloudFormation: allows you to provision AWS resources using Infrastructure as Code, IAC
+create templates for the resources you want to provision
+
+SQS: simple queue service, message queieng service that helps you to build loosely coupled systems
+allows component to component communication using messages,
+
+SNS: simple notification service, helps you send emails and text messages from your applications
+publish messages to a topic, which is an endpoint 
+
+Cloudwatch: collection of services that help you monitor and observe your cloud resources
+collects metrics, logs, and events, and sets alarms
+detects anomalies
+
+CloudTrail: tracks user activity and API calls within your account
+
+IAM: allows you to control access to your AWS services and resources
+you define who has access and what they can do
+users: entities you create in IAM to represent the person or application needing to access your aws resources
+IAM role: roles define access permissions via policies and are temporarily assumed by an IAM user, 
+IAM policy: JSON document that allows or denies permissions for IAM users, groups, and roles
+groups: collection of IAM users that helps you apply common access controls to all group members
+access is assigned using policies and roles
+principle of least privilege: involves giving a user the minimum access required to get the job done
+
+data in flight: data that is moving from one location to another
+data at rest: data that is being stored somewhere to be used later
+
+TCO: total cost of ownership, financial estimate of both the direct and inderect costs of AWS,
+aws pricing calculator: helps you estimate TCO, 
+
+
+
+
 
 intro:
     the aws certifified cloud practioner, CLF-CO1, verifies an overall knowledge of the AWS cloud independent
@@ -76,13 +174,6 @@ combination of public and private clouds,
 you can store highly sensitive data locally but run web applications on aws infrastructure,
 aws provides tools like direct connect so they can talk to each other
 
-region: a physical geographic location that is a collection of availability zones
-each region is fully independent from other regions,
-most resources are tied to a specific region
-
-AZ, availability zone: single data center or a collection of data centers within a region
-availability zones are physically seperated but connected through low latency links
-where you deploy your applications
 
 edge locations: mini data centers that hold cached content for fast delivery to your users made possible through
 cloudfront, edge locations reduce latency
@@ -252,7 +343,6 @@ CONTENT DELIVERY SERVICES:
 
 Cloudfront: a CDN that delivers data and applications globally with low latency,
 speeds up delivery of static and dynamic web content by using edge locations to cache content
-
     use cases: often used with s3 to deploy content globally,
     prevent attacts like DDos,
     IP address blocking
@@ -428,7 +518,6 @@ build highly engaging chatbots, IVR systems with integration with lambda,
 *****************
 DEVELOPER TOOLS:
 *****************
-
 Cloud9: allows you to write code within an IDE from within your web browser
 supports popular programming languages
     use cases:
@@ -552,12 +641,12 @@ IAM USERS AND PERMISSIONS:
 
 IAM: allows you to control access to your AWS services and resources
 you define who has access and what they can do
-    users: entities you create in IAM to represent the person or application needing to access your aws resources
-    IAM role: roles define access permissions via policies and are temporarily assumed by an IAM user, 
-    IAM policy: JSON document that allows or denies permissions for IAM users, groups, and roles
-    groups: collection of IAM users that helps you apply common access controls to all group members
-    access is assigned using policies and roles
-    principle of least privilege: involves giving a user the minimum access required to get the job done
+users: entities you create in IAM to represent the person or application needing to access your aws resources
+IAM role: roles define access permissions via policies and are temporarily assumed by an IAM user, 
+IAM policy: JSON document that allows or denies permissions for IAM users, groups, and roles
+groups: collection of IAM users that helps you apply common access controls to all group members
+access is assigned using policies and roles
+principle of least privilege: involves giving a user the minimum access required to get the job done
 
 resource groups: You can use resource groups to organize your AWS resources. Resource groups make it easier to 
 manage and automate tasks on large numbers of resources at one time. 
