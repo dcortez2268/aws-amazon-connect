@@ -1,9 +1,8 @@
 Interview review:
 
-data dip: retrieve information about a contact
+data dip: when you retrieve information about a contact
 
-CTR: contact trace record, ctrs help capture data about a contact, entails recordings or metrics 
-about contact
+CTR: contact trace record, allow you to review recordings or metrics about contact
 
 data centers: server farms
 
@@ -15,88 +14,83 @@ called virtual machines
 
 contact centers: call centers
 
-amazon connect: omni channel cloud contact center that helps companies provide superior customer 
-service at lower cost, 
-allows for incredible customer experiences because we can customize them to fit business needs.  
+amazon connect: omni channel cloud contact center service that helps companies provide superior 
+customer service at lower cost, 
+it allows for incredible customer experiences because we can customize them to fit business needs.  
 This power derives from lambda, and other crm integrations. 
 
-omni channel contact centers: various channels within single stream provide access to consolidated data, agent 
-can easily switch between channels, and allows customers to switch from one channel to another
+omni channel contact centers: contact centers that allow access to consolidated data, and agents 
+and customers can easily switch between channels, 
 
 voice channel: traditional inbound or outbound voice communications
 chat: proactive or reactive chat sessions through a web site or mobile app
 tasks: allow agents to create and complete tasks in an automated process
 
-cloud computing: is the delivery of computing services over the internet by using a pay as you go pricing model.
-You are billed only for what you use which helps you lower your operating costs, run your infrastructure more 
-efficiently, and scale as your business needs change.  You are basically renting computing power and storage from 
-someone else's datacenter.  
+cloud computing: is the delivery of computing services over the internet by implementing a pay 
+as you go pricing model. This helps you lower your operating costs, run your infrastructure more 
+efficiently, and scale as your business needs change.  You are basically renting computing power 
+and storage from someone else's datacenter.  
 
-containers: provide you with a standard way to package your application's code and dependencies into a single 
-object.  Also used for processes and workflows in which there are essential requirements for security, 
-reliability, and scalability.  
+CCP, contact control panel: a customizable interface that allows agents to easily engage with 
+contacts across multiple channels
 
-CCP, contact control panel: customizable interface that agents use to engage with contacts across
-multiple channels
+contact flows: allow you to define the customer experience within the contact center from start to
+finish, you can do many things like... play prompts, get input data, invoke lambda functions, and
+integrate lex bot, and so much more because they can integrate with CRMs and 
+databases to dynamically adapt the experience based on customer or history 
 
-contact flows: features that let you define the customer experience within the contact center 
-from start to finish, you can play prompts, get input data, invoke lambda functions, and 
-integrate lex bot, and so much more because they can integrate with CRMs and databases to 
-dynamically adapt the experience based on customer or history 
+routing profile: links a collection of queues to agents and determines the types of contacts that 
+an agent receives and routing priority
 
-routing profile: links a collection of queues to agents and determines the contacts that an agent
-receives and routing priority
-
-consider when creating connect instance: customers' location, agents' location, regulatory or compliance data 
-requirements,
+consider when creating connect instance: customers' location, agents' location,  and regulatory
+or compliance data requirements,
 
 queue: waiting area that holds contacts to be answered by agents
 
 prompts: audio files played in call flows
 
-contact: interaction with a customer in your contact center, can be voice, chat, task
+contact: interaction with a customer in your contact center, it can be of type voice, chat, or task
 
-contact attributes: refer to key value pairs that contain data about a contact, they allow you to
+contact attributes: are key value pairs that contain data about a contact, they allow you to
 pass data between amazon connect and other services
 
 quick connects: a list of destinations for common transfers, can be external number, agent, or queue
 
 agent: employee or customer service representative taking calls
 
-IVR, interactive voice responses: used to assist contacts navigating through the existing queues to reach an 
+IVR, interactive voice responses: help contacts navigate through the existing queues to reach an 
 agent that is able to assist them
 
-cases: represents a customers issue.  Cases help record the customers issue, the steps and interactions taken 
-to resolve the customer's issue, and the outcome.
+cases: help record the customers issue, the steps and interactions taken to resolve the customer's
+issue, and the outcome.
 
 lex: helps you build conversational interfaces via recognizing speech and understanding language,
-with lex you can build highly engaging chatbots, IVR systems with integrations like lambda,
+with lex you can build highly engaging chatbots and IVR systems with integrations like lambda,
 
 CUSTOMER PROFILES: has all the information agents need during customer interactions in a single 
 place. agents can quickly confirm the customer's identity and determine the reason for the call 
 or chat.
 
-effective rate for employees: focusing on increasing productivity rather than quantity of employees to negate 
+effective rate for employees: focuses on increasing productivity rather than quantity of employees to negate 
 need for more workers and also to increase wages to increase employee retainment rate
 
-Serverless computing: means that your code runs on servers without needing to provision or manage
-the servers. the cloud service provider automatically provisions, scales, and manages the 
-infrastructure required to run code.  These architectures are highly scalable and event driven.  
-They use resources only when a specific function or trigger occurs.  
+Serverless computing: means that your code runs on servers without needing to manage
+the servers. These architectures are highly scalable and event driven.  
+They use resources only when a specific function or trigger occurs. 
 
-Contact Lens: enables you to analyze conversations between customer and agents, by using speech 
-transcription, natural language processing, and intelligent search capabilities. It performs 
-sentiment analysis, detects issues, and enables you to automatically categorize contacts.
+Contact Lens: allows you to analyze conversations between customer and agents by implementing
+speech transcription, NLP, and intelligent search capabilities. It performs 
+sentiment analysis, detects issues, and categorizes contacts.
 TWO TYPES OF ANALYTICS: post call and real time analytics
 Use cases:
-generate alerts on real time customer sentiment drops across all calls
+generate alerts on real time customer sentiment during calls
 aggregate and report on reoccuring issues and topics
-measure the impact of latest marketing campaging by tecting how many customers referenced in a call
-customize agent compliance standards for eachr region and lines of business and enroll agents in
-training where required
+customize agent compliance standards and recommend training where required
+our use case: idetified the action item in call, and automating a task reminder for the agent to 
+complete that task after that call was done.  
 
-CRM: customer relationship management system, tool that manages all of your company's interactions
-and relationships with customers.
+CRM: customer relationship management system, tool that helps you manage all of your company's 
+interactions and relationships with customers.
 
 
 WEEK 1:
@@ -138,6 +132,9 @@ Amazon VPC, virtual private cloud: a networking service that allows you to estab
 Amazon Route 53: DNS web service
 latency: the time between when content requested and received
 
+containers: provide you with a standard way to package your application's code and dependencies into a single 
+object.  Also used for processes and workflows in which there are essential requirements for security, 
+reliability, and scalability.  
 
 WEEK 2:
 block level storage volumes: behave like physical hard drives
@@ -305,3 +302,9 @@ CASES
     case templates: cases are always created based on a template, they are forms that ensure agents collect and 
                     reference the right information for different types of customer issues
 }
+
+SCENARIOS:
+
+centene: company to look into that may be hiring
+contact centre amazon connect consultant: deloitte, seattle wa
+genesys,
