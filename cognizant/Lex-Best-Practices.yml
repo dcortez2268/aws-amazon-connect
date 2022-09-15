@@ -1,0 +1,43 @@
+Building Better Bots Using Amazon Connect Course: can be found at https://explore.skillbuilder.aws/learn/course/481/play/31421/building-better-bots-using-amazon-connect
+
+Learning Objectives: Learning objectives
+
+After completing this training, you will be able to:
+Explain the basics of chatbot design in Amazon Lex.
+Explain the chat conversational structure used in Amazon Lex.
+Review conversational interfaces incorporating natural language interactions.
+Analyze the conversational flow and natural inputs.
+Describe the steps to build and test a custom chatbot using Amazon Lex.
+
+utterances: configured phrases that can be typed or spoken to invoke a given intent
+intents: performs an action based on user input, input can be received through text or speech and can have several slots 
+fullfillment: how the request is completed (business logic) after the contact has provided all information required to fullfill intent.  could be passed to lambda or return the information back to the client via response
+
+
+slots: are input data required to fulfill an intent, 
+slot types: common phrases or descriptors (think variableName)
+slot values: value provided by customer (think variableValue)
+
+chatbot design in Amazon Lex: 
+-have clear goal, consider medium(voice, chat, web), and apply emphasis on important parts of interaction
+
+chat conversational structure: 
+-helpful to record how people normally engage in conversation for request, analyze it, and then replicate
+-flexibility of flow is a standard for natural conversations
+-incrementally build, focus on simplest way to build value
+-streamline interactions by using stored data when possible
+
+-best to incrementally add utterances
+-utterances may have slots in them
+-you can set priority on slot prompts, for ex ask for default values first then go on to other slots that have not been input yet 
+-use clarification prompts if intent not invoked and hangup prompts if subsequent fails to invoke
+
+Validate Input:
+-use confirmation prompts
+-Validation code hooks allow developers to exercise a great degree of control over dialog management, and provide the ability to defer to Amazon Lex when that control interferes with the natural flow of the conversation.
+
+Fulfillment:
+-fulfillment code hooks can place requests to back end API and send users a closing message
+
+
+

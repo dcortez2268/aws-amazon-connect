@@ -2,18 +2,17 @@ EVERYDAY REVIEW:
 agility: helps you innovate faster, by having numerous services available and able to integrate
 together in a loosely coupled architecture
 
-durability: this means your data will remain intact without corruption.
+durability: help you keep your data intact without corruption.
 
-elasticity: you can provision only what you need, and then grow and shrink based on demand.
+elasticity: allows you to provision what you need, and then grow and shrink based on demand.
 
-high availability: highly available systems are designed to operate continuously without failure for a long time 
-and provide quick access to data.  these systems avoid loss of service by reducing or managing failures.
+high availability: highly available systems are designed to operate continuously without failure for a long time and provide quick access to data.  these systems avoid loss of service by reducing or managing failures.
 
 scalability: scalable systems are expected to grow over time with no drop in performance
 
 main six advantages to cloud computing:
 stop spending money running and maintaining data centers,
-benefit from massive economies of scale, volume discounts are passed on to you,
+benefit from massive economies of scale, the volume discounts are passed on to you,
 trade capital expenses for variable expenses, you pay for what you use instead of making upfront investments
 
 increased agility, 
@@ -28,89 +27,83 @@ EC2, Elastic compute cloud: allows you to rent and manage virtual servers in the
 ec2 instances are the virtual servers running on the physical servers,
 
 3 cloud computing models:
-IAAS, Infrastructure as a Service: model closest to you managing physical servers.  The cloud provider provides
-servers, however you manage virtual machine, os, runtime, applications, and data and access, as well.
+IAAS, Infrastructure as a Service: model closest to you managing physical servers.  The cloud provider provides servers, however you manage virtual machine, os, runtime, applications, and data and access, as well.
 use case: renting out fundemental building blocks,
 ex: web hosting      
 
-PAAS, Platform as a Service: The cloud provider manages servers as well as os, virtual machine, and runtime,  
-you manage applications, and data and access.
-use case: used by developers, develop software using web based tools without worrying about underlying 
-architecture
+PAAS, Platform as a Service: The cloud provider manages servers as well as os, virtual machine, and runtime, you manage applications, and data and access.
+use case: used by developers, develop software using web based tools without worrying about underlying architecture
 ex: elastic beanstalk
 
-SAAS, Software as a Service: The cloud provider manages all aspects of hardware, software, and application,
-you only manage data and access only.
+SAAS, Software as a Service: The cloud provider manages all aspects of hardware, software, and application, you manage data and access only.
 use case: using a complete application, on demand, that someone offers to users,
 ex: email providers
 
 S3: object storage service for the cloud that is highly available and highly durable , objects 
 are stored in buckets, 
 
-AWS LAMBDA: serverless compute service that lets you run code without managing servers
+AWS LAMBDA: serverless compute service that allows you to run code without managing servers
         features:
         scales automatically,
         serverless, means that your code runs on servers without needing to manage the servers.
         write functions using many popular languages,
 
-Cloudfront: a CDN that delivers applications and data globally with low latency, it 
-speeds up delivery of static and dynamic web content by using edge locations to cache content
+Cloudfront: a CDN that delivers applications and data globally with low latency, it helps
+speed up delivery of static and dynamic web content by using edge locations to cache content
     use cases: often used with s3 to deploy content globally,
     prevent attacts like DDos,
     IP address blocking
 
-RDS: service that launches and manages relational databases,
-supports popular database engines, aurora, postreSQL, MySQL, MariaDB, Oracle, and SQL server
+RDS: service that allows you to launch and manage relational databases,
+it supports popular database engines, like aurora, postreSQL, MySQL, MariaDB, Oracle, and SQL server
 
-DynamoDB: fully managed NoSQL key value and document database,
-scales automatically to massive workloads with fast performance
+DynamoDB: is a fully managed NoSQL key value and document database,
+it scales automatically to massive workloads with fast performance
 
-DocumentDB: fully managed document database that supports MongoDB,
+DocumentDB: is a fully managed document database that supports MongoDB,
 
 VPC: virtual private cloud, allows you to create a secure private network in the AWS cloud where 
 you protect your resources,
 
-DIRECT CONNECT: dedicated physical network connection from your on premises data center to AWS, supports 
-hybrid model because it allows data to travel over private physical network connection
+DIRECT CONNECT: dedicated physical network connection from your on premises data center to AWS, 
+direct connect helps support hybrid model
 
-AWS VPN: is a site to site VPN that creates a secure connection between your on premise datacenter and
-your AWS VPCs, similar to direct connect but data travels over the public internet,
+AWS VPN: is a site to site VPN that creates a secure connection between your on premise datacenter and your AWS VPCs, similar to direct connect but data travels over the public internet,
 
 API Gateway: allows you to build and manage APIs
 
 Polly: allows you to turn text into speech
-supports several voices across many languages in natural speech and can create custom voice,
+it supports several voices across many languages in natural speech and can create custom voice,
 
-CloudFormation: allows you to provision AWS resources using Infrastructure as Code, IAC
-you can create templates to provision the resources
+CloudFormation: allows you to provision AWS resources using Infrastructure as Code and allows you to create templates to provision the resources
 
-SQS: simple queue service, message queieng service that allows you to build loosely coupled systems
-and allows component to component communication using messages,
+SQS: simple queue service, message queieng service that allows you to build loosely coupled systems and allows component to component communication using messages,
 
 SNS: simple notification service, allows you to send emails and text messages from your 
 applications and allows you to publish messages to a topic, which are endpoints
 
 Cloudwatch: collection of services that help you monitor and observe your cloud resources
-and it allows you to collect logs and events, metrics, and can detect anomalies and set alarms
+and it allows you to collect logs, metrics, anomalies, and set alarms
 
 CloudTrail: allows you to track user activity and API calls within your account
 
 IAM: allows you to control access to your AWS services and resources
+IAM policy: is a JSON document that allows or denies permissions for IAM users, groups, and roles
+
 users: represents the person or application needing to access your aws resources
-IAM role: roles define access permissions via policies and are temporarily assumed by an IAM user, 
-IAM policy: JSON document that allows or denies permissions for IAM users, groups, and roles
-groups: allows you to apply common access controls to a set of users
+IAM role: roles allow us to temporarily assume permissions via policies for an IAM user
+groups: allows you to apply common permissions to a set of users
 principle of least privilege: involves giving a user the minimum access required to get the job done
 
 data in flight: data that is moving from one location to another
 data at rest: data that is being stored somewhere to be used later
 
+
+
+
+
 TCO: total cost of ownership, financial estimate of both the direct and inderect costs of AWS,
 aws pricing calculator: helps you estimate TCO, 
-
-
-
-
 
 intro:
     the aws certifified cloud practioner, CLF-CO1, verifies an overall knowledge of the AWS cloud independent
