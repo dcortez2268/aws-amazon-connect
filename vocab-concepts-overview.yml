@@ -2,22 +2,16 @@ Interview review:
 
 data dip: when you retrieve information about a contact
 
-CTR: contact trace record, allow you to review recordings or metrics about contact
+CTR: contact trace record, allows you to review recordings or metrics about contact
 
 data centers: server farms
-
-data warehouse: a data storage solution that aggregates massive amounts of historical data from 
-disparate sources
-
-virtualization: lets you divide hardware resources on a single physical server into smaller units,
-called virtual machines
 
 contact centers: call centers
 
 amazon connect: omni channel cloud contact center service that helps companies provide superior 
 customer service at lower cost, 
 it allows for incredible customer experiences because we can customize them to fit business needs.  
-This power derives from lambda, and other crm integrations. 
+This power derives from numerous integrations like lambda and crms
 
 omni channel contact centers: contact centers that allow access to consolidated data, and agents 
 and customers can easily switch between channels, 
@@ -65,14 +59,16 @@ cases: help record the customers issue, the steps and interactions taken to reso
 issue, and the outcome.
 
 lex: helps you build conversational interfaces via recognizing speech and understanding language,
-with lex you can build highly engaging chatbots and IVR systems with integrations like lambda,
+with lex you can build highly engaging user experiences and lifelike conversational interactions
+utterances: configured phrases that can be typed or spoken to invoke a given intent
+intents: performs an action based on user input, input can be received through text or speech and can have several slots 
+slots: are input data required to fulfill an intent, 
+(basically like a variable) 
+fullfillment: how the request is completed after the contact has provided all information required to fullfill intent.  could be passed to lambda or return the information back to the client via response
 
-CUSTOMER PROFILES: has all the information agents need during customer interactions in a single 
-place. agents can quickly confirm the customer's identity and determine the reason for the call 
-or chat.
+CUSTOMER PROFILES: allows agents to have all the right info at the right time during customer interactions in a single place
+Customer profiles include: purchase history, case info, contact info, contact history, customer insights
 
-effective rate for employees: focuses on increasing productivity rather than quantity of employees to negate 
-need for more workers and also to increase wages to increase employee retainment rate
 
 Serverless computing: means that your code runs on servers without needing to manage
 the servers. These architectures are highly scalable and event driven.  
@@ -89,8 +85,7 @@ customize agent compliance standards and recommend training where required
 our use case: idetified the action item in call, and automating a task reminder for the agent to 
 complete that task after that call was done.  
 
-CRM: customer relationship management system, tool that helps you manage all of your company's 
-interactions and relationships with customers.
+CRM: customer relationship management system, is is a tool that helps you manage all of your company's interactions and relationships with customers.
 
 
 WEEK 1:
@@ -261,11 +256,9 @@ lex:
     provides an incredible amount of customization through the use of attributes in lambda
     uses speech recognition and nlp to build an intricate chat bot
 utterances: configured phrases that can be typed or spoken to invoke a given intent
-intents: result in an action based on our user input, input can be received through text or natural language understanding
-    can have several slots and each slot has a type
+intents: result in an action based on our user input, input can be received through text or natural language understanding can have several slots and each slot has a type
 slots: are the actual input data from a customer required to fulfill an intent, basically like a variable
-fullfillment: how the request is completed after the customer contact has provided all information required to 
-            fullfill intent.  could be passed to lambda or return the information back to the client via response
+fullfillment: how the request is completed after the customer contact has provided all information required to fullfill intent.  could be passed to lambda or return the information back to the client via response
 
 CHAT:
     you can wait an extended period of time with wait block
@@ -308,3 +301,11 @@ SCENARIOS:
 centene: company to look into that may be hiring
 contact centre amazon connect consultant: deloitte, seattle wa
 genesys,
+
+data warehouse: a data storage solution that aggregates massive amounts of historical data from 
+
+effective rate for employees: focuses on increasing productivity rather than quantity of employees to negate need for more workers and also to increase wages to increase employee retainment rate
+
+virtualization: lets you divide hardware resources on a single physical server into smaller units,
+called virtual machines
+disparate sources
