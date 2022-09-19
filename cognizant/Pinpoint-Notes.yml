@@ -1,0 +1,17 @@
+Getting Started with Amazon Pinpoint: https://docs.aws.amazon.com/pinpoint/latest/userguide/gettingstarted.html
+
+Use Case:  you can use to engage with your customers across multiple messaging channels.
+channels: push notifications, in-app notifications, emails, text messages, voice messages, and messages over custom channels.
+
+features: features mentioned below allow us to send the right message at the right time over the right channel to customers 
+
+audience segments: designates which users receive the messages that are sent from a campaign or journey.  You can define dynamic segments by the groups of customers that share certain attributes.  You can also define static segments defined outside of Amazon Pinpoint in CSV or JSON format,  and are uploaded via S3.  
+
+messaging campaign: sends tailored messages on a schedule that you define to a specific audience segment.
+
+journeys: custom, multi-step experiences for your customers.  
+You define segment audience that participates in journey and then add the activities that customers pass through on their journeys.
+
+message templates: allow us to design consistent messages and resuse content.  
+
+Pinpoint analytics: allows us to gain insight into your audience and the effectiveness of your campaigns and messaging activities.  

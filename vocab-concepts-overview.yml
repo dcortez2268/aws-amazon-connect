@@ -90,6 +90,11 @@ CRM: customer relationship management system, it is a tool that helps you manage
 
 outbound campaigns:  helps you proactively communicate across voice, text, and email to serve your customers quickly and improve agent productivity, while supporting compliance with local regulations.
 
+Pinpoint: allows us to engage with your customers across multiple messaging channels.  Its features allow us to dynamically communicate with the customer at the right time with right message on right channel.  
+audience segments: designates which users receive the messages that are sent from a campaign or journey.
+messaging campaign: allows us to send tailored messages on a schedule that you define to a specific audience segment.
+journeys: allows us to create automate custom, multi-step experiences for customers
+
 
 WEEK 1:
 three deployment models for cloud computing: public cloud, private cloud, and hybrid cloud.
