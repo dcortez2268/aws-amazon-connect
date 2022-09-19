@@ -14,7 +14,7 @@ intents: performs an action based on user input, input can be received through t
 fullfillment: how the request is completed (business logic) after the contact has provided all information required to fullfill intent.  could be passed to lambda or return the information back to the client via response
 
 
-slots: are input data required to fulfill an intent, 
+slots: are input data required to fulfill an intent,(like variables)
 slot types: common phrases or descriptors (think variableName)
 slot values: value provided by customer (think variableValue)
 

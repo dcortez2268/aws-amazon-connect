@@ -11,7 +11,7 @@ contact centers: call centers
 amazon connect: omni channel cloud contact center service that helps companies provide superior 
 customer service at lower cost, 
 it allows for incredible customer experiences because we can customize them to fit business needs.  
-This power derives from numerous integrations like lambda and crms
+This power derives from numerous integrations with services like lambda and crms
 
 omni channel contact centers: contact centers that allow access to consolidated data, and agents 
 and customers can easily switch between channels, 
@@ -62,9 +62,10 @@ lex: helps you build conversational interfaces via recognizing speech and unders
 with lex you can build highly engaging user experiences and lifelike conversational interactions
 utterances: configured phrases that can be typed or spoken to invoke a given intent
 intents: performs an action based on user input, input can be received through text or speech and can have several slots 
-slots: are input data required to fulfill an intent, 
-(basically like a variable) 
-fullfillment: how the request is completed after the contact has provided all information required to fullfill intent.  could be passed to lambda or return the information back to the client via response
+fullfillment: how the request is completed (business logic) after the contact has provided all information required to fullfill intent.  could be passed to lambda or return the information back to the client via response
+slots: are input data required to fulfill an intent,(like variables)
+slot types: common phrases or descriptors (think variableName)
+slot values: value provided by customer (think variableValue)
 
 CUSTOMER PROFILES: allows agents to have all the right info at the right time during customer interactions in a single place
 Customer profiles include: purchase history, case info, contact info, contact history, customer insights
@@ -85,7 +86,9 @@ customize agent compliance standards and recommend training where required
 our use case: idetified the action item in call, and automating a task reminder for the agent to 
 complete that task after that call was done.  
 
-CRM: customer relationship management system, is is a tool that helps you manage all of your company's interactions and relationships with customers.
+CRM: customer relationship management system, it is a tool that helps you manage all of your company's interactions and relationships with customers.
+
+outbound campaigns:  helps you proactively communicate across voice, text, and email to serve your customers quickly and improve agent productivity, while supporting compliance with local regulations.
 
 
 WEEK 1:

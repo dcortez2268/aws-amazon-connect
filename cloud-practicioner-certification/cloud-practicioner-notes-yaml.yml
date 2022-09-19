@@ -1,4 +1,5 @@
 EVERYDAY REVIEW:
+characteristics of cloud computing: 
 agility: helps you innovate faster, by having numerous services available and able to integrate
 together in a loosely coupled architecture
 
@@ -27,13 +28,13 @@ EC2, Elastic compute cloud: allows you to rent and manage virtual servers in the
 ec2 instances are the virtual servers running on the physical servers,
 
 3 cloud computing models:
-IAAS, Infrastructure as a Service: model closest to you managing physical servers.  The cloud provider provides servers, however you manage virtual machine, os, runtime, applications, and data and access, as well.
+IAAS, Infrastructure as a Service: the cloud provider manages servers only,  you manage virtual machine, os, runtime, applications, and data and access, as well.
 use case: renting out fundemental building blocks,
 ex: web hosting      
 
 PAAS, Platform as a Service: The cloud provider manages servers as well as os, virtual machine, and runtime, you manage applications, and data and access.
 use case: used by developers, develop software using web based tools without worrying about underlying architecture
-ex: elastic beanstalk
+ex: elastic beanstalk, firebase
 
 SAAS, Software as a Service: The cloud provider manages all aspects of hardware, software, and application, you manage data and access only.
 use case: using a complete application, on demand, that someone offers to users,
@@ -90,9 +91,9 @@ CloudTrail: allows you to track user activity and API calls within your account
 IAM: allows you to control access to your AWS services and resources
 IAM policy: is a JSON document that allows or denies permissions for IAM users, groups, and roles
 
-users: represents the person or application needing to access your aws resources
-IAM role: roles allow us to temporarily assume permissions via policies for an IAM user
-groups: allows you to apply common permissions to a set of users
+user: represents a person or application requesting access to your aws resources
+group: set of users with common access permissions
+IAM role: roles allow us to temporarily assume permissions via policies for an IAM user or group
 principle of least privilege: involves giving a user the minimum access required to get the job done
 
 data in flight: data that is moving from one location to another
@@ -834,9 +835,21 @@ events
 Use the AWS Support API to programmatically open a case with AWS Support.
 
 
+check call progress block
 
 
+instance id: 
+a44a4ab3-982c-429f-855e-2a4564b1848c
+queue id: 
+0f27ee25-e304-4e9c-9eba-2eb2e98bdda3
+flow id:
+ac85e225-a397-4fac-b441-028943ad8e82
+outbound campaign id: 
+f6124702-74e3-43f6-9317-46f72f8053b2
 
+AppointmentsfileBucket	appointmentreminder-calllistbucket-1qpf2tmklidwz	
+ReportsDataBucket	    appointmentreminder-athenadatabucket-1hd8nnamrlpvq
 
-
-
+Left off here:
+Update contact flow references
+Open the Amazon Connect console.
