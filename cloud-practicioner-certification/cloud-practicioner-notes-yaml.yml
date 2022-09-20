@@ -55,7 +55,7 @@ speed up delivery of static and dynamic web content by using edge locations to c
     prevent attacts like DDos,
     IP address blocking
 
-RDS: service that allows you to launch and manage relational databases,
+RDS: service that allows you to launch and manage a relational database
 it supports popular database engines, like aurora, postreSQL, MySQL, MariaDB, Oracle, and SQL server
 
 DynamoDB: is a fully managed NoSQL key value and document database,
@@ -64,24 +64,31 @@ it scales automatically to massive workloads with fast performance
 DocumentDB: is a fully managed document database that supports MongoDB,
 
 VPC: virtual private cloud, allows you to create a secure private network in the AWS cloud where 
-you protect your resources,
+you protect your services and resources,
 
-DIRECT CONNECT: dedicated physical network connection from your on premises data center to AWS, 
+DIRECT CONNECT: dedicated physical network connection that allows you to connect your on premises data center to AWS, 
 direct connect helps support hybrid model
 
-AWS VPN: is a site to site VPN that creates a secure connection between your on premise datacenter and your AWS VPCs, similar to direct connect but data travels over the public internet,
+AWS VPN: is a site to site VPN that allows you to connect your on premise data center to your AWS VPCs, similar to direct connect but data travels over the public internet,
 
 API Gateway: allows you to build and manage APIs
 
 Polly: allows you to turn text into speech
 it supports several voices across many languages in natural speech and can create custom voice,
 
-CloudFormation: allows you to provision AWS resources using Infrastructure as Code and allows you to create templates to provision the resources
+CloudFormation: allows you to create templates to provision AWS resources using Infrastructure as Code
 
 SQS: simple queue service, message queieng service that allows you to build loosely coupled systems and allows component to component communication using messages,
 
 SNS: simple notification service, allows you to send emails and text messages from your 
 applications and allows you to publish messages to a topic, which are endpoints
+
+
+Pinpoint: allows us to engage with customers across multiple messaging channels.  Its features allow us to dynamically communicate with the customer at the right time with right message on the right channel.  
+audience segments: designates which users receive the messages that are sent from a campaign or journey.
+messaging campaign: allows us to send tailored messages on a schedule that you define to a specific audience segment.
+journeys: allows us to automate custom, multi-step experiences for customers
+
 
 Cloudwatch: collection of services that help you monitor and observe your cloud resources
 and it allows you to collect logs, metrics, anomalies, and set alarms

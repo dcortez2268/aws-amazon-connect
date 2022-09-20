@@ -2,7 +2,7 @@ Interview review:
 
 data dip: when you retrieve information about a contact
 
-CTR: contact trace record, allows you to review recordings or metrics about contact
+CTR: contact trace record,  they allows yo to review recordings or metrics about contact
 
 data centers: server farms
 
@@ -29,7 +29,7 @@ CCP, contact control panel: a customizable interface that allows agents to easil
 contacts across multiple channels
 
 contact flows: allow you to define the customer experience within the contact center from start to
-finish, you can do many things like... play prompts, get input data, invoke lambda functions, and
+finish, you can do many things like... play prompts, get input data, invoke lambda functions,
 integrate lex bot, and so much more because they can integrate with CRMs and 
 databases to dynamically adapt the experience based on customer or history 
 
@@ -55,20 +55,20 @@ agent: employee or customer service representative taking calls
 IVR, interactive voice responses: help contacts navigate through the existing queues to reach an 
 agent that is able to assist them
 
-cases: help record the customers issue, the steps and interactions taken to resolve the customer's
+cases: help record the customers issue, the steps taken to resolve the customer's
 issue, and the outcome.
 
 lex: helps you build conversational interfaces via recognizing speech and understanding language,
-with lex you can build highly engaging user experiences and lifelike conversational interactions
-utterances: configured phrases that can be typed or spoken to invoke a given intent
+with lex you can build highly engaging user experiences and lifelike conversations
+utterances: configured phrases that invoke a given intent
 intents: performs an action based on user input, input can be received through text or speech and can have several slots 
 fullfillment: how the request is completed (business logic) after the contact has provided all information required to fullfill intent.  could be passed to lambda or return the information back to the client via response
-slots: are input data required to fulfill an intent,(like variables)
-slot types: common phrases or descriptors (think variableName)
-slot values: value provided by customer (think variableValue)
+slot: is input data required to fulfill an intent,(it is like a variable)
+slot type: is a common phrase or descriptor (it is like variableName)
+slot value: value provided by customer (it is like variableValue)
 
 CUSTOMER PROFILES: allows agents to have all the right info at the right time during customer interactions in a single place
-Customer profiles include: purchase history, case info, contact info, contact history, customer insights
+Customer profiles include: purchase history, case info, contact info, contact history, and customer insights
 
 
 Serverless computing: means that your code runs on servers without needing to manage
@@ -86,14 +86,11 @@ customize agent compliance standards and recommend training where required
 our use case: idetified the action item in call, and automating a task reminder for the agent to 
 complete that task after that call was done.  
 
-CRM: customer relationship management system, it is a tool that helps you manage all of your company's interactions and relationships with customers.
+CRM: customer relationship management system, is a tool that helps you manage all of your company's interactions and relationships with customers.
 
 outbound campaigns:  helps you proactively communicate across voice, text, and email to serve your customers quickly and improve agent productivity, while supporting compliance with local regulations.
 
-Pinpoint: allows us to engage with your customers across multiple messaging channels.  Its features allow us to dynamically communicate with the customer at the right time with right message on right channel.  
-audience segments: designates which users receive the messages that are sent from a campaign or journey.
-messaging campaign: allows us to send tailored messages on a schedule that you define to a specific audience segment.
-journeys: allows us to create automate custom, multi-step experiences for customers
+
 
 
 WEEK 1:

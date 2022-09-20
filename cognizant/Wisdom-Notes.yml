@@ -1,0 +1,11 @@
+Amazon Wisdom: https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-wisdom.html
+
+Overview: helps deliver agents the information they need, reducing the time spent searching for answers  
+
+Use case: When used with Contact Lens, Contact lens will automatically detect customer issue during call and then Wisdom will recommend content in real time to help resolve the issue
+Use case: Agents can search and find content across many repositories for handling customers' issues.  Agents can input question into Wisdom without having to worry about which keywords to use. 
+
+Repository sources: connectors for third party applications such as Salesforce, Zendesk, ServiceNow, and other sources such as FAQs, wikis, articles, and step by step instructions for handling customer issues.
+
+Use console v2 or Wisdom APIs to implement, instructions found in blog
+
