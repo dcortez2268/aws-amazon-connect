@@ -2,7 +2,7 @@ Interview review:
 
 data dip: when you retrieve information about a contact
 
-CTR: contact trace record,  they allows yo to review recordings or metrics about contact
+CTR: contact trace record,  they allow you to review recordings or metrics about contact
 
 data centers: server farms
 
@@ -13,8 +13,7 @@ customer service at lower cost,
 it allows for incredible customer experiences because we can customize them to fit business needs.  
 This power derives from numerous integrations with services like lambda and crms
 
-omni channel contact centers: contact centers that allow access to consolidated data, and agents 
-and customers can easily switch between channels, 
+omni channel contact centers: contact center that allows access to consolidated data, and allows agents and customers to easily switch between channels, 
 
 voice channel: traditional inbound or outbound voice communications
 chat: proactive or reactive chat sessions through a web site or mobile app
@@ -33,8 +32,7 @@ finish, you can do many things like... play prompts, get input data, invoke lamb
 integrate lex bot, and so much more because they can integrate with CRMs and 
 databases to dynamically adapt the experience based on customer or history 
 
-routing profile: links a collection of queues to agents and determines the types of contacts that 
-an agent receives and routing priority
+routing profile: links a collection of queues to an agent and determines the types of contacts that an agent receives and routing priority
 
 consider when creating connect instance: customers' location, agents' location,  and regulatory
 or compliance data requirements,
@@ -48,7 +46,7 @@ contact: interaction with a customer in your contact center, it can be of type v
 contact attributes: are key value pairs that contain data about a contact, they allow you to
 pass data between amazon connect and other services
 
-quick connects: a list of destinations for common transfers, can be external number, agent, or queue
+quick connects: a list of destinations for common transfers, they can be external number, agent, or queue
 
 agent: employee or customer service representative taking calls
 
@@ -60,22 +58,22 @@ issue, and the outcome.
 
 lex: helps you build conversational interfaces via recognizing speech and understanding language,
 with lex you can build highly engaging user experiences and lifelike conversations
-utterances: configured phrases that invoke a given intent
-intents: performs an action based on user input, input can be received through text or speech and can have several slots 
-fullfillment: how the request is completed (business logic) after the contact has provided all information required to fullfill intent.  could be passed to lambda or return the information back to the client via response
+utterance: configured phrase that invokes a given intent
+intent: perform an action based on user input, the input can can have several slots 
+fullfillment: how the request is completed (business logic) after intent has been fullfilled with all required slots.    
+
 slot: is input data required to fulfill an intent,(it is like a variable)
 slot type: is a common phrase or descriptor (it is like variableName)
 slot value: value provided by customer (it is like variableValue)
 
-CUSTOMER PROFILES: allows agents to have all the right info at the right time during customer interactions in a single place
+CUSTOMER PROFILES: help agents to have all the right info at the right time during customer interactions in a single place
 Customer profiles include: purchase history, case info, contact info, contact history, and customer insights
-
 
 Serverless computing: means that your code runs on servers without needing to manage
 the servers. These architectures are highly scalable and event driven.  
 They use resources only when a specific function or trigger occurs. 
 
-Contact Lens: allows you to analyze conversations between customer and agents by implementing
+Contact Lens: allows you to analyze conversations between customers and agents by implementing
 speech transcription, NLP, and intelligent search capabilities. It performs 
 sentiment analysis, detects issues, and categorizes contacts.
 TWO TYPES OF ANALYTICS: post call and real time analytics
@@ -86,9 +84,12 @@ customize agent compliance standards and recommend training where required
 our use case: idetified the action item in call, and automating a task reminder for the agent to 
 complete that task after that call was done.  
 
-CRM: customer relationship management system, is a tool that helps you manage all of your company's interactions and relationships with customers.
+CRM: tool that helps a company manage all of its interactions and relationships with customers. 
 
-outbound campaigns:  helps you proactively communicate across voice, text, and email to serve your customers quickly and improve agent productivity, while supporting compliance with local regulations.
+outbound campaigns:  help you proactively communicate across voice, text, and email to serve your customers quickly and improve agent productivity, 
+while supporting compliance with local regulations.
+
+wisdom: helps deliver agents the information they need, reducing the time spent searching for answers
 
 
 
