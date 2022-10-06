@@ -7,7 +7,7 @@ durability: help you keep your data intact without corruption.
 
 elasticity: allows you to provision what you need, and then grow and shrink based on demand.
 
-high availability: highly available systems are designed to operate continuously without failure for a long time and provide quick access to data.  
+high availability: highly available systems are designed to operate continuously without failure for a long time and provide quick access to data.  When it fails, it is designed to be fixed as quickly as possible.
 
 scalability: scalable systems are expected to grow over time with no drop in performance
 
@@ -29,7 +29,7 @@ ec2 instances are the virtual servers running on the physical servers,
 
 3 cloud computing models:
 IAAS, Infrastructure as a Service: the cloud provider manages servers and virtual machine, you manage os, runtime, applications, and data and access, as well.
-use case: renting out fundemental building blocks,
+use case: renting out fundamental building blocks,
 ex: web hosting      
 
 PAAS, Platform as a Service: The cloud provider manages servers, virtual machine, os, and runtime, you manage applications, and data and access.
@@ -88,7 +88,6 @@ audience segments: designates which users receive the messages that are sent fro
 messaging campaign: allows us to send tailored messages on a schedule that you define to a specific audience segment.
 journeys: allows us to automate custom, multi-step experiences for customers
 
-
 Cloudwatch: collection of services that help you monitor and observe your cloud resources
 and it allows you to collect logs, metrics, anomalies, and set alarms
 
@@ -100,7 +99,7 @@ IAM policy: is a JSON document that allows or denies permissions for IAM identit
 IAM Identities:
 user: represents a person or application that need access to your aws resources
 group: set of users with common access permissions
-IAM role: roles allow user or group to temporarily assume permissions via policies,  
+IAM roles: roles allow user or group to temporarily assume permissions via policies,  
 or for granting external access permissions, generally used when an unknown number of users is uncertain
 
 principle of least privilege: involves giving a user the minimum access required to get the job done
@@ -776,7 +775,6 @@ root account is called master payer
     SCPs: service control policies, help you enforce permissions you want everyone in org to follow
     OUs: organization units, grouping of AWS accounts that are similar 
     member accounts: are the standard, individual aws accounts that contain your aws resources
-
 benefits:
 consolidated billing, cost savings, account governance
 
