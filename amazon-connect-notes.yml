@@ -58,7 +58,7 @@ issue, and the outcome.
 lex: helps you build conversational interfaces via recognizing speech and understanding language,
 with lex you can build highly engaging user experiences and lifelike conversations
 utterance: configured phrase that invokes a given intent
-intent: performs an action based on user input, the input can can have several slots 
+intent: performs an action based on gathering user input to fulfill all required slots
 fullfillment: how the request is completed (business logic) after intent has been fullfilled with all required slots.    
 
 slot: is input data required to fulfill an intent,(it is like a variable)

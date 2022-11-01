@@ -100,7 +100,7 @@ IAM Identities:
 user: represents a person or application that need access to your aws resources
 group: set of users with common access permissions
 IAM roles: roles allow user or group to temporarily assume permissions via policies,  
-or for granting external access permissions, generally used when an unknown number of users is uncertain
+they are used for granting external access permissions, generally used when an unknown number of users is uncertain
 
 principle of least privilege: involves giving a user the minimum access required to get the job done
 
@@ -838,24 +838,3 @@ TAMs: typically provide proactive best-practice guidance and assistance with arc
 running AWS solutions.
 Infrastrucure event management: helps provide support for planning and running business critical
 events
-Use the AWS Support API to programmatically open a case with AWS Support.
-
-
-check call progress block
-
-
-instance id: 
-a44a4ab3-982c-429f-855e-2a4564b1848c
-queue id: 
-0f27ee25-e304-4e9c-9eba-2eb2e98bdda3
-flow id:
-ac85e225-a397-4fac-b441-028943ad8e82
-outbound campaign id: 
-f6124702-74e3-43f6-9317-46f72f8053b2
-
-AppointmentsfileBucket	appointmentreminder-calllistbucket-1qpf2tmklidwz	
-ReportsDataBucket	    appointmentreminder-athenadatabucket-1hd8nnamrlpvq
-
-Left off here:
-Update contact flow references
-Open the Amazon Connect console.
