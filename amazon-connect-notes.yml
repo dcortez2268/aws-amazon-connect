@@ -20,11 +20,15 @@ tasks:
     allow agents to create and complete tasks in an automated process
 CCP, contact control panel: 
     a customizable interface that allows agents to easily engage with contacts across multiple channels
+    agents can use the URL for CCP to directly login to CCP
 contact flows: 
     allow you to define the customer experience within the contact center from start to finish
     you can do many things like... play prompts, get input data, invoke lambda functions, integrate lex bot, and so much more because they can integrate with CRMs and databases to dynamically adapt the experience based on customer or history 
     only certain blocks will be available to certain type of contact flow
     you have to set the active queue block before transfer to queue block
+    whisper flows:
+        a sequence of actions that will take place just before the call gets connected
+        experienced by either the agent or the customer
 routing profile: 
     links a collection of queues to an agent and determines the types of contacts that an agent receives and routing priority
 queue: 
@@ -42,12 +46,16 @@ quick connects:
 agent: 
     employee or customer service representative taking calls
 IVR, interactive voice response system: 
-    help contacts navigate through the existing queues to reach an agent that is able to assist them
+    allows callers to interact with your contact center using spoken or keypad inputs.  It provides a self serve interface and allows contacts to route to an agent that is able to assist them.
+quick connects: 
+    a list of destinations for common transfers that can be an external number, agent, or queue
+agent: 
+    employee or customer service representative taking calls
 
 
 CUSTOMER PROFILES:
-    has all the information agents need during customer interactions in a single place. 
-    agents can quickly confirm the customer's identity and determine the reason for the call or chat.
+    provides a single view for all the information agents need during customer interactions
+    can integrate with external CRMs or use amazon connect's out of the box solution
     includes: 
         purchase history, case info, contact info, contact history, and customer insights
     customer profiles domain: 
@@ -70,14 +78,6 @@ outbound campaigns:
 wisdom: 
     helps deliver agents the information they need, reducing the time spent searching for answers
 
-contact attributes: 
-    refer to key value pairs that contain data about a contact
-    they allow you to pass data between amazon connect and other services
-quick connects: 
-    a list of destinations for common transfers that can be an external number, agent, or queue
-agent: 
-    employees or customer service representative taking calls
-
 DID numbers, (direct dial in): 
     a local phone number that customers can call from within a specific geographic area
     used to provide customers with a local number they are familiar with
@@ -85,7 +85,6 @@ DID numbers, (direct dial in):
 TFN numbers, (toll free numbers): 
     a number that starts with a toll free area code
     the charges for phone call are free for customers anywhere in the country and are paid by the organization
-
 
 CHAT:
     you cannot receive calls while on chat, including from other agents
