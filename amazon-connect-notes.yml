@@ -11,42 +11,33 @@ amazon connect:
     it allows for incredible customer experiences because we can customize them to fit business needs.  
     This power derives from numerous integrations with services
 omni channel contact center: 
-    contact center that allows access to consolidated data, and allows agents and customers to easily switch between channels, 
+    contact center that allows access to consolidated data, and allows agents and customers to easily switch between channels
 voice channel: 
     traditional inbound or outbound voice communications
 chat: 
     proactive or reactive chat sessions through a web site or mobile app
 tasks: 
     allow agents to create and complete tasks in an automated process
+    can be created via create task block, CRM applications, or manually from CCP by agents
 CCP, contact control panel: 
     a customizable interface that allows agents to easily engage with contacts across multiple channels
     agents can use the URL for CCP to directly login to CCP
-contact flows: 
-    allow you to define the customer experience within the contact center from start to finish
-    you can do many things like... play prompts, get input data, invoke lambda functions, integrate lex bot, and so much more because they can integrate with CRMs and databases to dynamically adapt the experience based on customer or history 
-    only certain blocks will be available to certain type of contact flow
-    you have to set the active queue block before transfer to queue block
-    whisper flows:
-        a sequence of actions that will take place just before the call gets connected
-        experienced by either the agent or the customer
 routing profile: 
-    links a collection of queues to an agent and determines the types of contacts that an agent receives and routing priority
+    links a collection of queues to an agent and determines the types of contacts that an agent receives and the routing priority
 queue: 
     waiting area that holds contacts to be answered by agents
 prompts: 
     audio files played in call flows
 contact: 
     interaction with a customer in your contact center, it can be of type voice, chat, or task
-contact attributes: 
-    are key value pairs that contain data about a contact
-    they allow you to pass data between amazon connect and other services
 quick connects: 
     is a list of destinations for common transfers
     can be external numbers, agents, or queues
+    configured on the queue
 agent: 
     employee or customer service representative taking calls
 IVR, interactive voice response system: 
-    allows callers to interact with your contact center using spoken or keypad inputs.  It provides a self serve interface and allows contacts to route to an agent that is able to assist them.
+    allows callers to interact with your contact center using spoken or keypad inputs.  It provides a self serve interface that allows contacts to perform functionalities and also route to an agent that is able to assist them.
 quick connects: 
     a list of destinations for common transfers that can be an external number, agent, or queue
 agent: 
@@ -54,7 +45,7 @@ agent:
 
 
 CUSTOMER PROFILES:
-    provides a single view for all the information agents need during customer interactions
+    provides a single view for all the information agents need during customer interactions:
     can integrate with external CRMs or use amazon connect's out of the box solution
     includes: 
         purchase history, case info, contact info, contact history, and customer insights
@@ -63,7 +54,7 @@ CUSTOMER PROFILES:
         create customer profiles domain when you create customer profile
 
 Contact Lens: 
-    allows you to analyze conversations between customers and agents
+    allows you to analyze conversations between customers and agents:
     it implements speech transcription, intelligent search capabilities, sentiment analysis, detects issues, and categorizes contacts.
     TWO TYPES OF ANALYTICS: 
         post call and real time analytics
@@ -73,7 +64,8 @@ Contact Lens:
         customize agent compliance standards and recommend training where required
     
 outbound campaigns:  
-    help you proactively communicate across voice, text, and email to serve your customers quickly and improve agent productivity, while supporting compliance with local regulations.
+    help you proactively communicate across voice, text, and email to serve your customers:
+    they improve agent productivity, while supporting compliance with local regulations.
 
 wisdom: 
     helps deliver agents the information they need, reducing the time spent searching for answers
@@ -84,28 +76,88 @@ DID numbers, (direct dial in):
     charges for phone call are paid by the customer 
 TFN numbers, (toll free numbers): 
     a number that starts with a toll free area code
-    the charges for phone call are free for customers anywhere in the country and are paid by the organization
+    the charges for phone call are free for customers anywhere in the country and are paid for by the organization
 
-CHAT:
+-----------------------------------------------------------------------------------------------:
+CHAT CONFIGURATIONS:
     you cannot receive calls while on chat, including from other agents
     customers and agents cannot send attachments through chat interface
     only one channel is routed at a time
-    total duration of contact flow cannot exceed 25 hours
-    lex has a default session timeout duration of five minutes, this timeout can be increased up to 24 hrs
-    BEFORE WE TEST CHAT WE NEED TO PRECONFIG:
-        update security profiles to allow the chat test mode,
-        update routing profile to permit chat channel,
-        configure a disconnect flow where we can add wait action blocks if we'd like
+    customer can leave the chat and resume later (async chat):
+        total duration of contact flow cannot exceed 25 hours
+        lex has a default session timeout duration of five minutes, this timeout can be increased up to 24 hrs
+    configurations needed:
+        update security profiles to allow the chat test mode
+        update routing profile to permit chat channel
+        to implement async chat:
+            configure disconnect flow where we can add 'wait' blocks to allow customer to return 
+            customer is transferred to disconnect flow when agent terminates chat, implemented in flow by 'set disconnect flow' block in chat contact flow
     reaching more customers with web and mobile chat on amazon connect post:
 
+-----------------------------------------------------------------------------------------------:
 cases: 
     help record the customers issue, the steps taken to resolve the customer's issue, and the outcome.
     case templates: 
         forms used to create cases that ensure agents collect and reference the right information for different types of customer issues
         can have custom case fields or system case fields 
         
+-----------------------------------------------------------------------------------------------:
 competitors with amazon connect:
     centene
     genesys
 
+-----------------------------------------------------------------------------------------------:
+contact flows: 
+    allow you to define the customer experience within the contact center from start to finish
+    only certain blocks will be available to certain types of contact flows
+    there are default flows that are used by default if flow does not specify an explicit flow...ex if you do not set a customer queue flow before a 'transfer to queue' block then you will hear the default customer queue flow
+    contact flow types:
+        https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types
+        note that it says 'inbound flow' is generic type in blog but the generic type is named 'contact flow'
+        contact flow:
+            generic inbound flow
+        whisper flow:
+            the experience when the agent and customer are being connected
+            one sided interaction that plays immediately before customer and agent hear each other for phone call or see each other's messages for chat
+            there is 'set whisper flow' block for customer and agent whisper flows, but outbound whisper flow is set in queue configuration
+        customer queue flow:
+            the experience when customer is in queue
+        hold flow:
+            invoked when an agent puts a customer on hold
+            one sided interaction that plays immediately after agent presses hold on CCP and ends immediately after agent presses resume on CCP
+        transfer flow:
+            implemented with quick connects to transfer customers to agents or queues
+            transfer to agent flow:
+            transfer to queue flow:
 
+-----------------------------------------------------------------------------------------------:
+contact attributes: 
+    are key value pairs that contain data about a contact
+    they allow you to pass data between amazon connect and other services
+    contact attribute types:
+        https://docs.aws.amazon.com/connect/latest/adminguide/connect-attrib-list.html
+    to create custom attribute:
+        use 'set contact attribute' block
+        get data with 'check contact attribute' block
+
+-----------------------------------------------------------------------------------------------:
+AMAZON POLLY AND SSML:
+    speech synthesis markup language:
+        allows greater control on how polly interprets text
+        uses tags like HTML
+        complete list of supported SSML tags:
+            https://docs.aws.amazon.com/polly/latest/dg/supportedtags.html
+
+-----------------------------------------------------------------------------------------------:
+LAMBDA:
+    import lambda functions to connect instance via settings under contact flows tab
+    implement lambdas in contact flow via 'invoke aws lambda function' block
+    return data back in lambda's response, and that data is available via attributes...type is External and Attribute is the name of the property returned
+
+-----------------------------------------------------------------------------------------------:
+INTEGRATING A LEX CHATBOT WITH CONNECT:
+    create chatbot inside lex
+    import chatbot to connect instance via settings under contact flows tab
+    implement via 'Get customer input' block in contact flow
+
+-----------------------------------------------------------------------------------------------:
